@@ -3,8 +3,8 @@ local ReplicatedStorage = game:GetService("ReplicatedStorage")
 local RunService = game:GetService("RunService")
 local Workspace = game:GetService("Workspace")
 
-local createSignal = require(ReplicatedStorage.shared.Server.Package.Signal)
-local Trove = require(ReplicatedStorage.shared.Server.Package.Trove)
+local createSignal = require(ReplicatedStorage.shared.Package.Signal)
+local Trove = require(ReplicatedStorage.shared.Package.Trove)
 
 local PowerService = {}
 PowerService.PowerCollected = createSignal()
@@ -178,6 +178,7 @@ local function spawnPickup(areaName)
 
 			collected = true
 			PowerService.PowerCollected:Fire(player, areaConfig.PowerAmount, newPower, areaName)
+			print("power collected")
 			cleanupAndRespawn()
 		end)
 	end

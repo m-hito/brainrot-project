@@ -48576,6 +48576,14 @@
                       "filePaths": [
                         "sync/ReplicatedStorage/shared/Server/Services/DataService.luau"
                       ]
+                    },
+                    {
+                      "name": "VFXService",
+                      "className": "ModuleScript",
+                      "guid": "4763906",
+                      "filePaths": [
+                        "sync/ReplicatedStorage/shared/Server/Services/VFXService.luau"
+                      ]
                     }
                   ]
                 }
@@ -48638,6 +48646,14 @@
               "guid": "17790",
               "filePaths": [
                 "sync/ServerScriptService/Controller/PlayerCollisionSetup.server.luau"
+              ]
+            },
+            {
+              "name": "PowerService",
+              "className": "Script",
+              "guid": "1340936",
+              "filePaths": [
+                "sync/ServerScriptService/Controller/PowerService.server.luau"
               ]
             }
           ]
@@ -49967,234 +49983,9 @@
       "guid": "13",
       "children": [
         {
-          "name": "Barrier",
-          "className": "Part",
-          "guid": "16551"
-        },
-        {
           "name": "Camera",
           "className": "Camera",
           "guid": "228079"
-        },
-        {
-          "name": "Part",
-          "className": "Part",
-          "guid": "16496"
-        },
-        {
-          "name": "Part",
-          "className": "Part",
-          "guid": "16497"
-        },
-        {
-          "name": "Part",
-          "className": "Part",
-          "guid": "16498"
-        },
-        {
-          "name": "Part",
-          "className": "Part",
-          "guid": "16499"
-        },
-        {
-          "name": "Part",
-          "className": "Part",
-          "guid": "16500"
-        },
-        {
-          "name": "Part",
-          "className": "Part",
-          "guid": "16501"
-        },
-        {
-          "name": "Part",
-          "className": "Part",
-          "guid": "16502"
-        },
-        {
-          "name": "Part",
-          "className": "Part",
-          "guid": "16503"
-        },
-        {
-          "name": "Part",
-          "className": "Part",
-          "guid": "16504"
-        },
-        {
-          "name": "Part",
-          "className": "Part",
-          "guid": "16505"
-        },
-        {
-          "name": "Part",
-          "className": "Part",
-          "guid": "16506"
-        },
-        {
-          "name": "Part",
-          "className": "Part",
-          "guid": "16507"
-        },
-        {
-          "name": "Part",
-          "className": "Part",
-          "guid": "16508"
-        },
-        {
-          "name": "Part",
-          "className": "Part",
-          "guid": "16509"
-        },
-        {
-          "name": "Part",
-          "className": "Part",
-          "guid": "16510"
-        },
-        {
-          "name": "Part",
-          "className": "Part",
-          "guid": "16511"
-        },
-        {
-          "name": "Part",
-          "className": "Part",
-          "guid": "16512"
-        },
-        {
-          "name": "Part",
-          "className": "Part",
-          "guid": "16513"
-        },
-        {
-          "name": "Part",
-          "className": "Part",
-          "guid": "16514"
-        },
-        {
-          "name": "Part",
-          "className": "Part",
-          "guid": "16515"
-        },
-        {
-          "name": "Part",
-          "className": "Part",
-          "guid": "16516"
-        },
-        {
-          "name": "Part",
-          "className": "Part",
-          "guid": "16517"
-        },
-        {
-          "name": "Part",
-          "className": "Part",
-          "guid": "16518"
-        },
-        {
-          "name": "Part",
-          "className": "Part",
-          "guid": "16519"
-        },
-        {
-          "name": "Part",
-          "className": "Part",
-          "guid": "16520"
-        },
-        {
-          "name": "Part",
-          "className": "Part",
-          "guid": "16521"
-        },
-        {
-          "name": "Part",
-          "className": "Part",
-          "guid": "16522"
-        },
-        {
-          "name": "Part",
-          "className": "Part",
-          "guid": "16523"
-        },
-        {
-          "name": "Part",
-          "className": "Part",
-          "guid": "16524"
-        },
-        {
-          "name": "Part",
-          "className": "Part",
-          "guid": "16525"
-        },
-        {
-          "name": "Part",
-          "className": "Part",
-          "guid": "16526"
-        },
-        {
-          "name": "Part",
-          "className": "Part",
-          "guid": "16527"
-        },
-        {
-          "name": "Part",
-          "className": "Part",
-          "guid": "16528"
-        },
-        {
-          "name": "Part",
-          "className": "Part",
-          "guid": "16529"
-        },
-        {
-          "name": "Part",
-          "className": "Part",
-          "guid": "16530"
-        },
-        {
-          "name": "Part",
-          "className": "Part",
-          "guid": "16531"
-        },
-        {
-          "name": "Part",
-          "className": "Part",
-          "guid": "16532"
-        },
-        {
-          "name": "Part",
-          "className": "Part",
-          "guid": "16533"
-        },
-        {
-          "name": "Part",
-          "className": "Part",
-          "guid": "16534"
-        },
-        {
-          "name": "Part",
-          "className": "Part",
-          "guid": "16535"
-        },
-        {
-          "name": "Part",
-          "className": "Part",
-          "guid": "16536"
-        },
-        {
-          "name": "Part",
-          "className": "Part",
-          "guid": "16537"
-        },
-        {
-          "name": "Part",
-          "className": "Part",
-          "guid": "16538"
-        },
-        {
-          "name": "Part",
-          "className": "Part",
-          "guid": "16539"
         },
         {
           "name": "SpawnLocation",
@@ -53760,6 +53551,28 @@
               "name": "VipZoneDoor",
               "className": "Part",
               "guid": "16544"
+            },
+            {
+              "name": "VipBase",
+              "className": "Part",
+              "guid": "16520"
+            },
+            {
+              "name": "Model",
+              "className": "Model",
+              "guid": "2556204",
+              "children": [
+                {
+                  "name": "Wall",
+                  "className": "Part",
+                  "guid": "16543"
+                }
+              ]
+            },
+            {
+              "name": "VipPowerArea",
+              "className": "Part",
+              "guid": "3814125"
             }
           ]
         },
@@ -53806,49 +53619,250 @@
           ]
         },
         {
-          "name": "Wall",
-          "className": "Part",
-          "guid": "16540"
+          "name": "Model",
+          "className": "Folder",
+          "children": [
+            {
+              "name": "Part",
+              "className": "Part",
+              "guid": "16539"
+            }
+          ]
         },
         {
-          "name": "Wall",
-          "className": "Part",
-          "guid": "16541"
+          "name": "CommonArea",
+          "className": "Model",
+          "guid": "2549395",
+          "children": [
+            {
+              "name": "Barrier",
+              "className": "Part",
+              "guid": "16551"
+            },
+            {
+              "name": "Part",
+              "className": "Part",
+              "guid": "16502"
+            },
+            {
+              "name": "Part",
+              "className": "Part",
+              "guid": "16503"
+            },
+            {
+              "name": "Part",
+              "className": "Part",
+              "guid": "16504"
+            },
+            {
+              "name": "Part",
+              "className": "Part",
+              "guid": "16505"
+            },
+            {
+              "name": "Part",
+              "className": "Part",
+              "guid": "16508"
+            },
+            {
+              "name": "Part",
+              "className": "Part",
+              "guid": "16509"
+            },
+            {
+              "name": "Part",
+              "className": "Part",
+              "guid": "16510"
+            },
+            {
+              "name": "Part",
+              "className": "Part",
+              "guid": "16511"
+            },
+            {
+              "name": "Part",
+              "className": "Part",
+              "guid": "16512"
+            },
+            {
+              "name": "Part",
+              "className": "Part",
+              "guid": "16514"
+            },
+            {
+              "name": "Part",
+              "className": "Part",
+              "guid": "16518"
+            },
+            {
+              "name": "Part",
+              "className": "Part",
+              "guid": "16521"
+            },
+            {
+              "name": "Part",
+              "className": "Part",
+              "guid": "16524"
+            },
+            {
+              "name": "Part",
+              "className": "Part",
+              "guid": "16526"
+            },
+            {
+              "name": "Part",
+              "className": "Part",
+              "guid": "16530"
+            },
+            {
+              "name": "Part",
+              "className": "Part",
+              "guid": "16532"
+            },
+            {
+              "name": "Part",
+              "className": "Part",
+              "guid": "16533"
+            },
+            {
+              "name": "Part",
+              "className": "Part",
+              "guid": "16534"
+            },
+            {
+              "name": "Part",
+              "className": "Part",
+              "guid": "16535"
+            },
+            {
+              "name": "Part",
+              "className": "Part",
+              "guid": "16536"
+            },
+            {
+              "name": "CommonPowerArea",
+              "className": "Part",
+              "guid": "2560838"
+            }
+          ]
         },
         {
-          "name": "Wall",
-          "className": "Part",
-          "guid": "16542"
-        },
-        {
-          "name": "Wall",
-          "className": "Part",
-          "guid": "16543"
-        },
-        {
-          "name": "Wall",
-          "className": "Part",
-          "guid": "16546"
-        },
-        {
-          "name": "Wall",
-          "className": "Part",
-          "guid": "16547"
-        },
-        {
-          "name": "Wall",
-          "className": "Part",
-          "guid": "16548"
-        },
-        {
-          "name": "Wall",
-          "className": "Part",
-          "guid": "16549"
-        },
-        {
-          "name": "Wall",
-          "className": "Part",
-          "guid": "16550"
+          "name": "InvsWalls",
+          "className": "Model",
+          "guid": "2550722",
+          "children": [
+            {
+              "name": "Part",
+              "className": "Part",
+              "guid": "16499"
+            },
+            {
+              "name": "Part",
+              "className": "Part",
+              "guid": "16506"
+            },
+            {
+              "name": "Part",
+              "className": "Part",
+              "guid": "16507"
+            },
+            {
+              "name": "Part",
+              "className": "Part",
+              "guid": "16513"
+            },
+            {
+              "name": "Part",
+              "className": "Part",
+              "guid": "16515"
+            },
+            {
+              "name": "Part",
+              "className": "Part",
+              "guid": "16516"
+            },
+            {
+              "name": "Part",
+              "className": "Part",
+              "guid": "16517"
+            },
+            {
+              "name": "Part",
+              "className": "Part",
+              "guid": "16519"
+            },
+            {
+              "name": "Part",
+              "className": "Part",
+              "guid": "16523"
+            },
+            {
+              "name": "Part",
+              "className": "Part",
+              "guid": "16525"
+            },
+            {
+              "name": "Part",
+              "className": "Part",
+              "guid": "16528"
+            },
+            {
+              "name": "Part",
+              "className": "Part",
+              "guid": "16529"
+            },
+            {
+              "name": "Part",
+              "className": "Part",
+              "guid": "16531"
+            },
+            {
+              "name": "Part",
+              "className": "Part",
+              "guid": "16537"
+            },
+            {
+              "name": "Part",
+              "className": "Part",
+              "guid": "16538"
+            },
+            {
+              "name": "Wall",
+              "className": "Part",
+              "guid": "16540"
+            },
+            {
+              "name": "Wall",
+              "className": "Part",
+              "guid": "16546"
+            },
+            {
+              "name": "Wall",
+              "className": "Part",
+              "guid": "16548"
+            },
+            {
+              "name": "Wall",
+              "className": "Part",
+              "guid": "16549"
+            },
+            {
+              "name": "Wall",
+              "className": "Part",
+              "guid": "16550"
+            },
+            {
+              "name": "Model",
+              "className": "Folder",
+              "children": [
+                {
+                  "name": "Wall",
+                  "className": "Part",
+                  "guid": "16542"
+                }
+              ]
+            }
+          ]
         },
         {
           "name": "YeetZone",
