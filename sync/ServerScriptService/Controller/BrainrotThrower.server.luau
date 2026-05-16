@@ -4,36 +4,40 @@ local ReplicatedStorage = game:GetService("ReplicatedStorage")
 local Players = game:GetService("Players")
 local Workspace = game:GetService("Workspace")
 local SoundService = game:GetService("SoundService")
-local DataStoreService = game:GetService("DataStoreService")
+local DataService = require(ReplicatedStorage.shared.Server.Services.DataService)
 
-local networkFolder = ReplicatedStorage:FindFirstChild("Network")
+local networkFolder = ReplicatedStorage.shared:FindFirstChild("Network")
 if not networkFolder then
     networkFolder = Instance.new("Folder")
     networkFolder.Name = "Network"
-    networkFolder.Parent = ReplicatedStorage
+    networkFolder.Parent = ReplicatedStorage.shared
 end
 
--- DataStore for saving player data
-local MoneyDataStore = DataStoreService:GetDataStore("BrainrotMoney_V2")
-local ThrowsDataStore = DataStoreService:GetDataStore("BrainrotThrows_V2")
-local MaxDistanceDataStore = DataStoreService:GetDataStore("BrainrotMaxDistance_V2")
-local TotalDistanceDataStore = DataStoreService:GetDataStore("BrainrotTotalDistance_V2")
-local RebirthsDataStore = DataStoreService:GetDataStore("BrainrotRebirths_V2")
-local PowerDataStore = DataStoreService:GetDataStore("BrainrotPower_V2")
--- Removed MaxThrowsDataStore - single throw only
-
-local throwEvent = networkFolder:WaitForChild("ThrowBrainrotEvent")
-local distanceEvent = networkFolder:WaitForChild("DistanceEvent")
-local followEvent = networkFolder:WaitForChild("FollowBrainrotEvent")
-local nextBrainrotEvent = networkFolder:WaitForChild("NextBrainrotEvent")
-
 -- Create events
-local events = {"UpgradePowerEvent", "RebirthEvent", "ShopDataEvent", "PlayAnimEvent", "PlaySoundEvent", "SetMovementEvent", "ThrowCountEvent"}
+local events = {
+    "ThrowBrainrotEvent",
+    "DistanceEvent",
+    "FollowBrainrotEvent",
+    "NextBrainrotEvent",
+    "UpgradePowerEvent",
+    "RebirthEvent",
+    "ShopDataEvent",
+    "PlayAnimEvent",
+    "PlaySoundEvent",
+    "SetMovementEvent",
+    "ThrowCountEvent"
+}
 for _, eventName in ipairs(events) do
     if not networkFolder:FindFirstChild(eventName) then
         Instance.new("RemoteEvent", networkFolder).Name = eventName
     end
 end
+
+
+local throwEvent = networkFolder:WaitForChild("ThrowBrainrotEvent")
+local distanceEvent = networkFolder:WaitForChild("DistanceEvent")
+local followEvent = networkFolder:WaitForChild("FollowBrainrotEvent")
+local nextBrainrotEvent = networkFolder:WaitForChild("NextBrainrotEvent")
 
 local upgradeEvent = networkFolder.UpgradePowerEvent
 local rebirthEvent = networkFolder.RebirthEvent
@@ -211,49 +215,37 @@ end
 
 -- Load/Save player data
 local function loadPlayerData(player)
-    local data = {
-        {Store = MoneyDataStore, Key = "Money_", Table = PlayerMoney},
-        {Store = ThrowsDataStore, Key = "Throws_", Table = PlayerThrows},
-        {Store = MaxDistanceDataStore, Key = "MaxDistance_", Table = PlayerMaxDistance},
-        {Store = TotalDistanceDataStore, Key = "TotalDistance_", Table = PlayerTotalDistance},
-        {Store = RebirthsDataStore, Key = "Rebirths_", Table = PlayerRebirths},
-        {Store = PowerDataStore, Key = "Power_", Table = PlayerPower},
-        -- Removed MaxThrows data loading
-    }
-    
-    for _, d in ipairs(data) do
-        if not d.Table[player.UserId] then
-            local success, value = pcall(function()
-                return d.Store:GetAsync(d.Key .. player.UserId)
-            end)
-            d.Table[player.UserId] = (success and value) or 0
-        end
+    local profileData = DataService.getData(player)
+    if not profileData then
+        warn("[BrainrotThrower] Profile data not loaded for " .. player.Name)
+        return false
     end
+
+    PlayerMoney[player.UserId] = profileData.Money or 0
+    PlayerThrows[player.UserId] = profileData.Throws or 0
+    PlayerMaxDistance[player.UserId] = profileData.MaxDistance or 0
+    PlayerTotalDistance[player.UserId] = profileData.TotalDistance or 0
+    PlayerRebirths[player.UserId] = profileData.Rebirths or 0
+    PlayerPower[player.UserId] = profileData.Power or 0
     
     PlayerActiveThrows[player.UserId] = 0
+    return true
 end
 
 local function savePlayerData(player)
-    local data = {
-        {Store = MoneyDataStore, Key = "Money_", Value = PlayerMoney[player.UserId]},
-        {Store = ThrowsDataStore, Key = "Throws_", Value = PlayerThrows[player.UserId]},
-        {Store = MaxDistanceDataStore, Key = "MaxDistance_", Value = PlayerMaxDistance[player.UserId]},
-        {Store = TotalDistanceDataStore, Key = "TotalDistance_", Value = PlayerTotalDistance[player.UserId]},
-        {Store = RebirthsDataStore, Key = "Rebirths_", Value = PlayerRebirths[player.UserId]},
-        {Store = PowerDataStore, Key = "Power_", Value = PlayerPower[player.UserId]},
-        -- Removed MaxThrows data saving
-    }
-    
-    for _, d in ipairs(data) do
-        if d.Value then
-            pcall(function()
-                d.Store:SetAsync(d.Key .. player.UserId, d.Value)
-            end)
-        end
-    end
+    local profileData = DataService.getData(player)
+    if not profileData then return false end
+
+    profileData.Money = PlayerMoney[player.UserId] or 0
+    profileData.Throws = PlayerThrows[player.UserId] or 0
+    profileData.MaxDistance = PlayerMaxDistance[player.UserId] or 0
+    profileData.TotalDistance = PlayerTotalDistance[player.UserId] or 0
+    profileData.Rebirths = PlayerRebirths[player.UserId] or 0
+    profileData.Power = PlayerPower[player.UserId] or 0
+    return true
 end
 
-local brainrotsFolder = ReplicatedStorage:WaitForChild("Brainrots")
+local brainrotsFolder = ReplicatedStorage.Resources.Models:WaitForChild("Brainrots")
 
 -- Rarity tiers
 local RARITY_TIERS = {
@@ -347,7 +339,7 @@ local function sendShopData(player)
 end
 
 local function initPlayer(player)
-    loadPlayerData(player)
+    if not loadPlayerData(player) then return end
     distanceEvent:FireClient(player, 0, nil, nil, nil, PlayerMoney[player.UserId] or 0, true)
     updateLeaderboard(player)
     selectNextBrainrotForPlayer(player)
@@ -435,6 +427,7 @@ upgradeEvent.OnServerEvent:Connect(function(player, upgradeType)
         if currentPower < 100 and currentMoney >= upgradeCost then
             PlayerMoney[player.UserId] = currentMoney - upgradeCost
             PlayerPower[player.UserId] = currentPower + 1
+            savePlayerData(player)
             updateLeaderboard(player)
             sendShopData(player)
         end
@@ -451,6 +444,7 @@ local function doRebirth(player)
         PlayerRebirths[player.UserId] = currentRebirths + 1
         PlayerMoney[player.UserId] = 0
         PlayerPower[player.UserId] = 0
+        savePlayerData(player)
         -- Don't reset throws, max distance, or total distance - keep them for stats
         updateLeaderboard(player)
         sendShopData(player)
@@ -672,6 +666,7 @@ local function throwBrainrot(player, power)
                     PlayerMaxDistance[player.UserId] = maxDistance
                 end
                 
+                savePlayerData(player)
                 updateLeaderboard(player)
                 sendShopData(player)
 
@@ -711,6 +706,7 @@ local function throwBrainrot(player, power)
                         PlayerMaxDistance[player.UserId] = maxDistance
                     end
                     
+                    savePlayerData(player)
                     updateLeaderboard(player)
                     sendShopData(player)
 
@@ -760,7 +756,7 @@ local function throwBrainrot(player, power)
     end)
 end
 
-throwEvent.OnServerEvent:Connect(function(player, power)
+local function tryStartThrow(player, power)
     power = power or 50
 
     -- Anti-autoclick check
@@ -773,21 +769,21 @@ throwEvent.OnServerEvent:Connect(function(player, power)
 
     -- Check if already throwing FIRST (before any other processing)
     local activeThrows = PlayerActiveThrows[player.UserId] or 0
-    if activeThrows >= 1 then return end
+    if activeThrows >= 1 then return false end
 
     -- Check if there are any brainrots on the track
-    if hasBrainrotsOnTrack() then return end
+    if hasBrainrotsOnTrack() then return false end
 
     local character = player.Character
-    if not character then return end
+    if not character then return false end
 
-    if not isInYeetZone(character) then return end
+    if not isInYeetZone(character) then return false end
     
     -- Must be facing north to throw
-    if not isFacingNorth(character) then return end
+    if not isFacingNorth(character) then return false end
 
     local humanoid = character:FindFirstChildOfClass("Humanoid")
-    if not humanoid then return end
+    if not humanoid then return false end
 
     -- Set active throw IMMEDIATELY to prevent rapid clicks
     PlayerActiveThrows[player.UserId] = 1
@@ -803,6 +799,13 @@ throwEvent.OnServerEvent:Connect(function(player, power)
 
     -- Throw the brainrot
     throwBrainrot(player, power)
+    return true
+end
+
+_G.TryThrowBrainrot = tryStartThrow
+
+throwEvent.OnServerEvent:Connect(function(player, power)
+    tryStartThrow(player, power)
 end)
 
 -- Player collision group

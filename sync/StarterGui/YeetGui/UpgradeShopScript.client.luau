@@ -9,7 +9,7 @@ local TweenService = game:GetService("TweenService")
 local player = Players.LocalPlayer
 local character = player.Character or player.CharacterAdded:Wait()
 local humanoidRootPart = character:WaitForChild("HumanoidRootPart")
-local networkFolder = ReplicatedStorage:WaitForChild("Network")
+local networkFolder = ReplicatedStorage.shared:WaitForChild("Network")
 
 -- Remote Events
 local upgradeEvent = networkFolder:WaitForChild("UpgradePowerEvent")

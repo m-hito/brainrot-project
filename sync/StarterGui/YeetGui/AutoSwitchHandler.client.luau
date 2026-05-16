@@ -9,7 +9,7 @@ local player = Players.LocalPlayer
 local playerGui = player:WaitForChild("PlayerGui")
 
 local screenGui = script.Parent
-local networkFolder = ReplicatedStorage:WaitForChild("Network")
+local networkFolder = ReplicatedStorage.shared:WaitForChild("Network")
 
 -- Get the existing switch frames
 local autoRebirthSwitch = screenGui:FindFirstChild("AutoRebirthSwitch")
@@ -149,8 +149,8 @@ local function setupSwitch(switchFrame, gamepassName, getEnabled, setEnabled)
     
     print("Setting up switch for", gamepassName, "- onButton:", onButton, "offButton:", offButton)
     
-    local function toggle()
-        print("Toggle clicked for", gamepassName)
+    local function setToggleState(newState)
+        print("Switch clicked for", gamepassName, "new state:", newState)
         print("Gamepass data received:", gamepassDataReceived)
         print("Owned gamepasses table:", ownedGamepasses)
         print("Checking ownedGamepasses[" .. gamepassName .. "]:", ownedGamepasses[gamepassName])
@@ -162,9 +162,7 @@ local function setupSwitch(switchFrame, gamepassName, getEnabled, setEnabled)
         end
         
         if ownedGamepasses[gamepassName] then
-            -- Player owns the gamepass - toggle the feature
-            local currentState = getEnabled()
-            local newState = not currentState
+            -- Player owns the gamepass - set the requested feature state
             setEnabled(newState)
             updateSwitch(switchFrame, newState, true)
             if gamepassCheckEvent then
@@ -182,14 +180,29 @@ local function setupSwitch(switchFrame, gamepassName, getEnabled, setEnabled)
         end
     end
     
-    -- Both buttons toggle the state
+    -- ON and OFF are explicit states, not blind toggles. This keeps the switch from
+    -- flipping back on when the player is trying to turn it off.
     if onButton then
-        onButton.MouseButton1Click:Connect(toggle)
+        onButton.MouseButton1Click:Connect(function()
+            setToggleState(true)
+        end)
     end
     
     if offButton then
-        offButton.MouseButton1Click:Connect(toggle)
+        offButton.MouseButton1Click:Connect(function()
+            setToggleState(false)
+        end)
     end
+end
+
+local function getGamepassNameFromId(gamepassId)
+    for gamepassName, id in pairs(GamepassConfig.IDs) do
+        if id == gamepassId then
+            return gamepassName
+        end
+    end
+
+    return nil
 end
 
 -- Setup switches
@@ -269,6 +282,29 @@ if gamepassCheckEvent then
     
     -- Request current gamepass status
     gamepassCheckEvent:FireServer()
+
+    MarketplaceService.PromptGamePassPurchaseFinished:Connect(function(purchasePlayer, gamepassId, wasPurchased)
+        if purchasePlayer ~= player or not wasPurchased then return end
+
+        local gamepassName = getGamepassNameFromId(gamepassId)
+        if not gamepassName then return end
+
+        ownedGamepasses[gamepassName] = true
+
+        if gamepassName == "AutoRebirth" then
+            autoRebirthEnabled = true
+            gamepassCheckEvent:FireServer({autoRebirthToggle = true})
+        elseif gamepassName == "AutoThrow" then
+            autoThrowEnabled = true
+            gamepassCheckEvent:FireServer({autoThrowToggle = true})
+        else
+            gamepassCheckEvent:FireServer()
+        end
+
+        gamepassDataReceived = true
+        updateSwitches()
+        setSwitchesEnabled(true)
+    end)
     
     -- Fallback: Set initial state after a short delay if no response
     task.delay(2, function()

@@ -5,20 +5,17 @@ local Players = game:GetService("Players")
 local GamePassService = game:GetService("GamePassService")
 local ReplicatedStorage = game:GetService("ReplicatedStorage")
 local MarketplaceService = game:GetService("MarketplaceService")
-local DataStoreService = game:GetService("DataStoreService")
+local DataService = require(ReplicatedStorage.shared.Server.Services.DataService)
 
-local networkFolder = ReplicatedStorage:FindFirstChild("Network")
+local networkFolder = ReplicatedStorage.shared:FindFirstChild("Network")
 if not networkFolder then
     networkFolder = Instance.new("Folder")
     networkFolder.Name = "Network"
-    networkFolder.Parent = ReplicatedStorage
+    networkFolder.Parent = ReplicatedStorage.shared
 end
 
 -- Load gamepass configuration
 local GamepassConfig = require(ReplicatedStorage:WaitForChild("GamepassConfig"))
-
--- DataStore for saving gamepass ownership
-local GamepassDataStore = DataStoreService:GetDataStore("GamepassData_v1")
 
 -- Track which players own which gamepasses
 local PlayerGamepasses = {}
@@ -44,65 +41,91 @@ end
 
 -- Function to load gamepass data from DataStore
 local function loadGamepassData(player)
-    local success, data = pcall(function()
-        return GamepassDataStore:GetAsync("Player_" .. player.UserId)
-    end)
-    
-    if success and data then
-        print("Loaded saved gamepass data for", player.Name)
-        return data
-    else
-        print("No saved gamepass data for", player.Name, "- starting fresh")
-        return {}
+    local profileData = DataService.getData(player)
+    if profileData then
+        profileData.Gamepasses = profileData.Gamepasses or {}
+        print("Loaded profile gamepass data for", player.Name)
+        return profileData.Gamepasses
     end
+
+    warn("[GamepassHandler] Profile data not loaded for " .. player.Name)
+    return {}
 end
 
 -- Function to load toggle states from DataStore
 local function loadToggleStates(player)
-    local success, data = pcall(function()
-        return GamepassDataStore:GetAsync("Player_Toggles_" .. player.UserId)
-    end)
-    
-    if success and data then
-        print("Loaded toggle states for", player.Name)
-        return data
-    else
-        print("No saved toggle states for", player.Name, "- starting fresh")
-        return {autoRebirth = false, autoThrow = false}
+    local profileData = DataService.getData(player)
+    if profileData then
+        profileData.Settings = profileData.Settings or {}
+        print("Loaded profile toggle states for", player.Name)
+        return {
+            autoRebirth = profileData.Settings.AutoRebirth == true,
+            autoThrow = profileData.Settings.AutoThrow == true,
+        }
+    end
+
+    warn("[GamepassHandler] Profile settings not loaded for " .. player.Name)
+    return {autoRebirth = false, autoThrow = false}
+end
+
+-- Function to save gamepass data to profile
+local function saveGamepassData(player)
+    local profileData = DataService.getData(player)
+    if profileData and PlayerGamepasses[player.UserId] then
+        profileData.Gamepasses = PlayerGamepasses[player.UserId]
+        print("Saved profile gamepass data for", player.Name)
     end
 end
 
--- Function to save gamepass data to DataStore
-local function saveGamepassData(player)
-    if PlayerGamepasses[player.UserId] then
-        local success, err = pcall(function()
-            GamepassDataStore:SetAsync("Player_" .. player.UserId, PlayerGamepasses[player.UserId])
-        end)
-        
-        if success then
-            print("Saved gamepass data for", player.Name)
-        else
-            warn("Failed to save gamepass data for", player.Name, err)
+-- Function to save toggle states to profile
+local function saveToggleStates(player)
+    local profileData = DataService.getData(player)
+    if profileData then
+        profileData.Settings = profileData.Settings or {}
+        profileData.Settings.AutoRebirth = PlayerAutoRebirthEnabled[player.UserId] == true
+        profileData.Settings.AutoThrow = PlayerAutoThrowEnabled[player.UserId] == true
+        print("Saved profile toggle states for", player.Name)
+    end
+end
+
+local function sendGamepassState(player)
+    gamepassCheckEvent:FireClient(player, {
+        gamepasses = PlayerGamepasses[player.UserId] or {},
+        autoRebirthEnabled = PlayerAutoRebirthEnabled[player.UserId] or false,
+        autoThrowEnabled = PlayerAutoThrowEnabled[player.UserId] or false
+    })
+end
+
+local function grantGamepass(player, gamepassName, enableAfterPurchase)
+    if not PlayerGamepasses[player.UserId] then
+        PlayerGamepasses[player.UserId] = {}
+    end
+
+    PlayerGamepasses[player.UserId][gamepassName] = true
+
+    if enableAfterPurchase then
+        if gamepassName == "AutoRebirth" then
+            PlayerAutoRebirthEnabled[player.UserId] = true
+        elseif gamepassName == "AutoThrow" then
+            PlayerAutoThrowEnabled[player.UserId] = true
         end
     end
+
+    saveGamepassData(player)
+    saveToggleStates(player)
+    sendGamepassState(player)
 end
 
--- Function to save toggle states to DataStore
-local function saveToggleStates(player)
-    local toggleData = {
-        autoRebirth = PlayerAutoRebirthEnabled[player.UserId] or false,
-        autoThrow = PlayerAutoThrowEnabled[player.UserId] or false
-    }
-    
-    local success, err = pcall(function()
-        GamepassDataStore:SetAsync("Player_Toggles_" .. player.UserId, toggleData)
-    end)
-    
-    if success then
-        print("Saved toggle states for", player.Name)
-    else
-        warn("Failed to save toggle states for", player.Name, err)
+local function getRequestedToggleState(value)
+    if value == true or value == "true" then
+        return true
     end
+
+    if value == false or value == "false" then
+        return false
+    end
+
+    return nil
 end
 
 -- Function to check if a player owns a gamepass
@@ -222,11 +245,7 @@ local function onPlayerAdded(player)
     end
     
     -- Send both gamepass ownership and toggle states
-    gamepassCheckEvent:FireClient(player, {
-        gamepasses = PlayerGamepasses[player.UserId],
-        autoRebirthEnabled = PlayerAutoRebirthEnabled[player.UserId],
-        autoThrowEnabled = PlayerAutoThrowEnabled[player.UserId]
-    })
+    sendGamepassState(player)
 end
 
 -- Handle player leaving
@@ -247,16 +266,26 @@ gamepassCheckEvent.OnServerEvent:Connect(function(player, data)
     if type(data) == "table" then
         -- Handle toggle events
         if data.autoRebirthToggle ~= nil then
-            PlayerAutoRebirthEnabled[player.UserId] = data.autoRebirthToggle
-            print(player.Name, "set autoRebirth to", data.autoRebirthToggle)
-            -- Save toggle state immediately when changed
-            saveToggleStates(player)
+            local requestedState = getRequestedToggleState(data.autoRebirthToggle)
+            if requestedState ~= nil then
+                PlayerAutoRebirthEnabled[player.UserId] = requestedState and hasAutoRebirth(player) or false
+                print(player.Name, "set autoRebirth to", requestedState, "stored:", PlayerAutoRebirthEnabled[player.UserId])
+                sendGamepassState(player)
+                task.spawn(function()
+                    saveToggleStates(player)
+                end)
+            end
         end
         if data.autoThrowToggle ~= nil then
-            PlayerAutoThrowEnabled[player.UserId] = data.autoThrowToggle
-            print(player.Name, "set autoThrow to", data.autoThrowToggle)
-            -- Save toggle state immediately when changed
-            saveToggleStates(player)
+            local requestedState = getRequestedToggleState(data.autoThrowToggle)
+            if requestedState ~= nil then
+                PlayerAutoThrowEnabled[player.UserId] = requestedState and hasAutoThrow(player) or false
+                print(player.Name, "set autoThrow to", requestedState, "stored:", PlayerAutoThrowEnabled[player.UserId])
+                sendGamepassState(player)
+                task.spawn(function()
+                    saveToggleStates(player)
+                end)
+            end
         end
     else
         -- Regular gamepass check request - verify Roblox ownership and send current state
@@ -286,11 +315,7 @@ gamepassCheckEvent.OnServerEvent:Connect(function(player, data)
         
         print("Sending gamepass data to", player.Name, "(request)")
         -- Send both gamepass ownership and toggle states
-        gamepassCheckEvent:FireClient(player, {
-            gamepasses = PlayerGamepasses[player.UserId],
-            autoRebirthEnabled = PlayerAutoRebirthEnabled[player.UserId],
-            autoThrowEnabled = PlayerAutoThrowEnabled[player.UserId]
-        })
+        sendGamepassState(player)
     end
 end)
 
@@ -302,41 +327,18 @@ gamepassPurchaseEvent.OnServerEvent:Connect(function(player, gamepassName)
     end
 end)
 
--- Handle gamepass purchases
-MarketplaceService.ProcessReceipt = function(receiptInfo)
-    local player = Players:GetPlayerByUserId(receiptInfo.PlayerId)
-    if not player then
-        return Enum.ProductPurchaseDecision.NotProcessedYet
-    end
-    
-    -- Check which gamepass was purchased
-    for name, id in pairs(GamepassConfig.IDs) do
-        if id == receiptInfo.ProductId then
-            -- Update ownership
-            if not PlayerGamepasses[player.UserId] then
-                PlayerGamepasses[player.UserId] = {}
-            end
-            PlayerGamepasses[player.UserId][name] = true
-            
-            print(player.Name, "purchased gamepass:", name)
-            print("Gamepass data:", game:GetService("HttpService"):JSONEncode(PlayerGamepasses[player.UserId]))
-            
-            -- Save to DataStore immediately after purchase
-            saveGamepassData(player)
-            
-            -- Notify client of new gamepass
-            gamepassCheckEvent:FireClient(player, {
-                gamepasses = PlayerGamepasses[player.UserId],
-                autoRebirthEnabled = PlayerAutoRebirthEnabled[player.UserId],
-                autoThrowEnabled = PlayerAutoThrowEnabled[player.UserId]
-            })
-            
+-- Handle gamepass purchases. ProcessReceipt is for developer products, not gamepasses.
+MarketplaceService.PromptGamePassPurchaseFinished:Connect(function(player, gamepassId, wasPurchased)
+    if not wasPurchased then return end
+
+    for gamepassName, id in pairs(GamepassConfig.IDs) do
+        if id == gamepassId then
+            print(player.Name, "purchased gamepass:", gamepassName)
+            grantGamepass(player, gamepassName, true)
             break
         end
     end
-    
-    return Enum.ProductPurchaseDecision.PurchaseGranted
-end
+end)
 
 -- Initialize existing players
 for _, player in ipairs(Players:GetPlayers()) do
@@ -359,26 +361,13 @@ _G.GrantAllGamepasses = function(player)
         PlayerGamepasses[player.UserId][name] = true
     end
     saveGamepassData(player)
-    gamepassCheckEvent:FireClient(player, {
-        gamepasses = PlayerGamepasses[player.UserId],
-        autoRebirthEnabled = PlayerAutoRebirthEnabled[player.UserId],
-        autoThrowEnabled = PlayerAutoThrowEnabled[player.UserId]
-    })
+    sendGamepassState(player)
     print("Granted all gamepasses to", player.Name)
 end
 
 -- Grant specific gamepass: _G.GrantGamepass(player, "AutoThrow")
 _G.GrantGamepass = function(player, gamepassName)
-    if not PlayerGamepasses[player.UserId] then
-        PlayerGamepasses[player.UserId] = {}
-    end
-    PlayerGamepasses[player.UserId][gamepassName] = true
-    saveGamepassData(player)
-    gamepassCheckEvent:FireClient(player, {
-        gamepasses = PlayerGamepasses[player.UserId],
-        autoRebirthEnabled = PlayerAutoRebirthEnabled[player.UserId],
-        autoThrowEnabled = PlayerAutoThrowEnabled[player.UserId]
-    })
+    grantGamepass(player, gamepassName, false)
     print("Granted", gamepassName, "to", player.Name)
 end
 
@@ -414,43 +403,7 @@ task.spawn(function()
     end
 end)
 
--- AUTO-THROW LOGIC  
--- Notify clients with auto-throw to attempt throws
-local yeetZone = game.Workspace:FindFirstChild("YeetZone")
-
-local function isInYeetZone(character)
-    if not character or not yeetZone then return false end
-    local hrp = character:FindFirstChild("HumanoidRootPart")
-    if not hrp then return false end
-    
-    local pos = hrp.Position
-    local zonePos = yeetZone.Position
-    local zoneSize = yeetZone.Size
-    
-    local halfSize = zoneSize / 2
-    return pos.X >= zonePos.X - halfSize.X and pos.X <= zonePos.X + halfSize.X
-       and pos.Z >= zonePos.Z - halfSize.Z and pos.Z <= zonePos.Z + halfSize.Z
-end
-
-local function isFacingNorth(character)
-    if not character then return false end
-    local hrp = character:FindFirstChild("HumanoidRootPart")
-    if not hrp then return false end
-    
-    local lookVector = hrp.CFrame.LookVector
-    return lookVector.X > 0.7
-end
-
--- Check if there are any brainrots on the track
-local function hasBrainrotsOnTrack()
-    for _, obj in ipairs(game.Workspace:GetChildren()) do
-        if obj.Name:find("Throw_") then
-            return true
-        end
-    end
-    return false
-end
-
+-- AUTO-THROW LOGIC
 task.spawn(function()
     while true do
         task.wait(0.5) -- Check every 0.5 seconds for faster response
@@ -465,29 +418,11 @@ task.spawn(function()
             end
             
             if ownsAutoThrow and toggleEnabled then
-                -- Only throw if no brainrots on track
-                if hasBrainrotsOnTrack() then
-                    -- Skip this check, wait for track to clear
-                    print(player.Name, "AutoThrow: waiting for track to clear")
-                else
-                    local character = player.Character
-                    if character then
-                        local humanoid = character:FindFirstChildOfClass("Humanoid")
-                        
-                        -- Only notify if player is alive AND in YeetZone AND facing north
-                        if humanoid and humanoid.Health > 0 then
-                            if isInYeetZone(character) then
-                                if isFacingNorth(character) then
-                                    print(player.Name, "AutoThrow: triggering throw")
-                                    gamepassCheckEvent:FireClient(player, {autoThrow = true})
-                                else
-                                    print(player.Name, "AutoThrow: not facing north")
-                                end
-                            else
-                                print(player.Name, "AutoThrow: not in YeetZone")
-                            end
-                        end
-                    end
+                local character = player.Character
+                local humanoid = character and character:FindFirstChildOfClass("Humanoid")
+
+                if humanoid and humanoid.Health > 0 and _G.TryThrowBrainrot then
+                    _G.TryThrowBrainrot(player, 100)
                 end
             end
         end

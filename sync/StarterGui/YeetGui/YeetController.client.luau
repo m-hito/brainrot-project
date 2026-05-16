@@ -11,7 +11,7 @@ local SoundService = game:GetService("SoundService")
 local player = Players.LocalPlayer
 local character = player.Character or player.CharacterAdded:Wait()
 local humanoidRootPart = character:WaitForChild("HumanoidRootPart")
-local networkFolder = ReplicatedStorage:WaitForChild("Network")
+local networkFolder = ReplicatedStorage.shared:WaitForChild("Network")
 
 local throwEvent = networkFolder:WaitForChild("ThrowBrainrotEvent")
 local distanceEvent = networkFolder:WaitForChild("DistanceEvent")

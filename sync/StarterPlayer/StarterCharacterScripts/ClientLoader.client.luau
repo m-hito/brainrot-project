@@ -1,0 +1,1 @@
+require(game:GetService("ReplicatedStorage").Init.Client).load()

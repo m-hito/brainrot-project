@@ -4,7 +4,7 @@ local Players = game:GetService("Players")
 local ReplicatedStorage = game:GetService("ReplicatedStorage")
 local player = Players.LocalPlayer
 local playerGui = player:WaitForChild("PlayerGui")
-local networkFolder = ReplicatedStorage:WaitForChild("Network")
+local networkFolder = ReplicatedStorage.shared:WaitForChild("Network")
 
 local screenGui = script.Parent
 local buttonPanel = screenGui:WaitForChild("Buttons")
@@ -166,18 +166,18 @@ local function togglePanel(panel)
         closeAllPanels()
         panel.Visible = not wasVisible
         
-        -- Handle movement
-        local character = player.Character
-        if character then
-            local humanoid = character:FindFirstChildOfClass("Humanoid")
-            if humanoid then
-                if panel.Visible then
-                    humanoid.WalkSpeed = 0
-                else
-                    humanoid.WalkSpeed = 16
-                end
-            end
-        end
+        ---- Handle movement
+        --local character = player.Character
+        --if character then
+        --    local humanoid = character:FindFirstChildOfClass("Humanoid")
+        --    if humanoid then
+        --        if panel.Visible then
+        --            humanoid.WalkSpeed = 0
+        --        else
+        --            humanoid.WalkSpeed = 16
+        --        end
+        --    end
+        --end
     end
 end
 
@@ -189,7 +189,11 @@ if rebirthButton then
         if rebirthPanel and rebirthPanel.Visible then
             shopDataEvent:FireServer()
         end
-    end)
+	end)
+	
+	rebirthPanel.Header.CloseButton.MouseButton1Click:Connect(function()
+		togglePanel(rebirthPanel)
+	end)
 end
 
 if inviteButton then

@@ -2,11 +2,11 @@ local Players = game:GetService("Players")
 local ReplicatedStorage = game:GetService("ReplicatedStorage")
 local SocialService = game:GetService("SocialService")
 
-local networkFolder = ReplicatedStorage:FindFirstChild("Network")
+local networkFolder = ReplicatedStorage.shared:FindFirstChild("Network")
 if not networkFolder then
 	networkFolder = Instance.new("Folder")
 	networkFolder.Name = "Network"
-	networkFolder.Parent = ReplicatedStorage
+	networkFolder.Parent = ReplicatedStorage.shared
 end
 
 -- Create the remote event if it doesn't exist

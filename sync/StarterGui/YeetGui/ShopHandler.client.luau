@@ -6,7 +6,7 @@ local MarketplaceService = game:GetService("MarketplaceService")
 
 local player = Players.LocalPlayer
 local playerGui = player:WaitForChild("PlayerGui")
-local networkFolder = ReplicatedStorage:WaitForChild("Network")
+local networkFolder = ReplicatedStorage.shared:WaitForChild("Network")
 
 local screenGui = script.Parent
 local shopFrame = screenGui:FindFirstChild("ShopFrame")
@@ -134,6 +134,16 @@ local function onBuyButtonClicked(itemFrame, gamepassName)
     MarketplaceService:PromptGamePassPurchase(player, gamepassId)
 end
 
+local function getGamepassNameFromId(gamepassId)
+    for gamepassName, id in pairs(GamepassConfig.IDs) do
+        if id == gamepassId then
+            return gamepassName
+        end
+    end
+
+    return nil
+end
+
 -- Setup buy buttons
 local function setupBuyButtons()
     if not shopFrame then return end
@@ -221,5 +231,16 @@ setupBuyButtons()
 
 -- Request current gamepass status
 gamepassCheckEvent:FireServer()
+
+MarketplaceService.PromptGamePassPurchaseFinished:Connect(function(purchasePlayer, gamepassId, wasPurchased)
+    if purchasePlayer ~= player or not wasPurchased then return end
+
+    local gamepassName = getGamepassNameFromId(gamepassId)
+    if not gamepassName then return end
+
+    ownedGamepasses[gamepassName] = true
+    updateShopUI()
+    gamepassCheckEvent:FireServer()
+end)
 
 print("ShopHandler loaded successfully!")
