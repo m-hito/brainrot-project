@@ -200,6 +200,8 @@ local function updateLeaderboard(player)
 		{Name = "Throws", Value = PlayerThrows[player.UserId] or 0, Class = "IntValue"},
 		{Name = "Max Distance", Value = PlayerMaxDistance[player.UserId] or 0, Class = "IntValue"},
 		{Name = "Rebirths", Value = PlayerRebirths[player.UserId] or 0, Class = "IntValue"},
+		{Name = "Power", Value = PlayerPower[player.UserId] or 0, Class = "IntValue"},
+		
 	}
 
     for _, stat in ipairs(stats) do
@@ -336,6 +338,24 @@ local function sendShopData(player)
     local totalDistance = PlayerTotalDistance[player.UserId] or 0
     
     shopDataEvent:FireClient(player, currentPower, upgradeCost, currentMoney, canUpgrade, rebirths, totalThrows, maxDistance, totalDistance)
+end
+
+_G.AddPlayerPower = function(player, amount)
+    amount = math.floor(tonumber(amount) or 0)
+    if amount <= 0 then return false end
+
+    if PlayerPower[player.UserId] == nil then
+        if not loadPlayerData(player) then return false end
+    end
+
+    local currentPower = PlayerPower[player.UserId] or 0
+    if currentPower >= 100 then return false end
+
+    PlayerPower[player.UserId] = math.min(100, currentPower + amount)
+    savePlayerData(player)
+    updateLeaderboard(player)
+    sendShopData(player)
+    return true, PlayerPower[player.UserId]
 end
 
 local function initPlayer(player)

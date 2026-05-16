@@ -48409,6 +48409,23 @@
                       ]
                     }
                   ]
+                },
+                {
+                  "name": "Power",
+                  "className": "Part",
+                  "guid": "1330462",
+                  "children": [
+                    {
+                      "name": "Decal",
+                      "className": "Decal",
+                      "guid": "1332921"
+                    },
+                    {
+                      "name": "Decal",
+                      "className": "Decal",
+                      "guid": "1334812"
+                    }
+                  ]
                 }
               ]
             }
@@ -48520,33 +48537,33 @@
               ]
             },
             {
+              "name": "Package",
+              "className": "Folder",
+              "guid": "418054",
+              "children": [
+                {
+                  "name": "Signal",
+                  "className": "ModuleScript",
+                  "guid": "417608",
+                  "filePaths": [
+                    "sync/ReplicatedStorage/shared/Package/Signal.luau"
+                  ]
+                },
+                {
+                  "name": "Trove",
+                  "className": "ModuleScript",
+                  "guid": "417609",
+                  "filePaths": [
+                    "sync/ReplicatedStorage/shared/Package/Trove.luau"
+                  ]
+                }
+              ]
+            },
+            {
               "name": "Server",
               "className": "Folder",
               "guid": "14164",
               "children": [
-                {
-                  "name": "Package",
-                  "className": "Folder",
-                  "guid": "418054",
-                  "children": [
-                    {
-                      "name": "Signal",
-                      "className": "ModuleScript",
-                      "guid": "417608",
-                      "filePaths": [
-                        "sync/ReplicatedStorage/shared/Server/Package/Signal.luau"
-                      ]
-                    },
-                    {
-                      "name": "Trove",
-                      "className": "ModuleScript",
-                      "guid": "417609",
-                      "filePaths": [
-                        "sync/ReplicatedStorage/shared/Server/Package/Trove.luau"
-                      ]
-                    }
-                  ]
-                },
                 {
                   "name": "Services",
                   "className": "Folder",
@@ -48762,7 +48779,14 @@
                 {
                   "name": "ButtonItIs",
                   "className": "TextLabel",
-                  "guid": "17953"
+                  "guid": "17953",
+                  "children": [
+                    {
+                      "name": "UITextSizeConstraint",
+                      "className": "UITextSizeConstraint",
+                      "guid": "1315324"
+                    }
+                  ]
                 },
                 {
                   "name": "Switch",
@@ -48855,7 +48879,14 @@
                 {
                   "name": "ButtonItIs",
                   "className": "TextLabel",
-                  "guid": "17956"
+                  "guid": "17956",
+                  "children": [
+                    {
+                      "name": "UITextSizeConstraint",
+                      "className": "UITextSizeConstraint",
+                      "guid": "1315312"
+                    }
+                  ]
                 },
                 {
                   "name": "Switch",
@@ -50181,6 +50212,3517 @@
           "name": "Terrain",
           "className": "Terrain",
           "guid": "17913"
+        },
+        {
+          "name": "UIS",
+          "className": "Folder",
+          "guid": "1318141",
+          "children": [
+            {
+              "name": "Flibpook Icons Pack",
+              "className": "Model",
+              "guid": "1318174",
+              "children": [
+                {
+                  "name": "Checkmark",
+                  "className": "Part",
+                  "guid": "1318407",
+                  "children": [
+                    {
+                      "name": "Decal",
+                      "className": "Decal",
+                      "guid": "1318106"
+                    }
+                  ]
+                },
+                {
+                  "name": "Click",
+                  "className": "Part",
+                  "guid": "1318416",
+                  "children": [
+                    {
+                      "name": "Decal",
+                      "className": "Decal",
+                      "guid": "1318115"
+                    }
+                  ]
+                },
+                {
+                  "name": "Codes",
+                  "className": "Part",
+                  "guid": "1318429",
+                  "children": [
+                    {
+                      "name": "Decal",
+                      "className": "Decal",
+                      "guid": "1318128"
+                    }
+                  ]
+                },
+                {
+                  "name": "Coin",
+                  "className": "Part",
+                  "guid": "1318408",
+                  "children": [
+                    {
+                      "name": "Decal",
+                      "className": "Decal",
+                      "guid": "1318107"
+                    }
+                  ]
+                },
+                {
+                  "name": "Coss",
+                  "className": "Part",
+                  "guid": "1318406",
+                  "children": [
+                    {
+                      "name": "Decal",
+                      "className": "Decal",
+                      "guid": "1318105"
+                    }
+                  ]
+                },
+                {
+                  "name": "Crown",
+                  "className": "Part",
+                  "guid": "1318411",
+                  "children": [
+                    {
+                      "name": "Decal",
+                      "className": "Decal",
+                      "guid": "1318110"
+                    }
+                  ]
+                },
+                {
+                  "name": "Crown",
+                  "className": "Part",
+                  "guid": "1318428",
+                  "children": [
+                    {
+                      "name": "Decal",
+                      "className": "Decal",
+                      "guid": "1318127"
+                    }
+                  ]
+                },
+                {
+                  "name": "Egg",
+                  "className": "Part",
+                  "guid": "1318419",
+                  "children": [
+                    {
+                      "name": "Decal",
+                      "className": "Decal",
+                      "guid": "1318118"
+                    }
+                  ]
+                },
+                {
+                  "name": "Gear",
+                  "className": "Part",
+                  "guid": "1318426",
+                  "children": [
+                    {
+                      "name": "Decal",
+                      "className": "Decal",
+                      "guid": "1318125"
+                    }
+                  ]
+                },
+                {
+                  "name": "GemBlue",
+                  "className": "Part",
+                  "guid": "1318430",
+                  "children": [
+                    {
+                      "name": "Decal",
+                      "className": "Decal",
+                      "guid": "1318129"
+                    }
+                  ]
+                },
+                {
+                  "name": "GemPurple",
+                  "className": "Part",
+                  "guid": "1318434",
+                  "children": [
+                    {
+                      "name": "Decal",
+                      "className": "Decal",
+                      "guid": "1318133"
+                    }
+                  ]
+                },
+                {
+                  "name": "GemYellow",
+                  "className": "Part",
+                  "guid": "1318438",
+                  "children": [
+                    {
+                      "name": "Decal",
+                      "className": "Decal",
+                      "guid": "1318137"
+                    }
+                  ]
+                },
+                {
+                  "name": "Heart",
+                  "className": "Part",
+                  "guid": "1318420",
+                  "children": [
+                    {
+                      "name": "Decal",
+                      "className": "Decal",
+                      "guid": "1318119"
+                    }
+                  ]
+                },
+                {
+                  "name": "Hoverboard",
+                  "className": "Part",
+                  "guid": "1318431",
+                  "children": [
+                    {
+                      "name": "Decal",
+                      "className": "Decal",
+                      "guid": "1318130"
+                    }
+                  ]
+                },
+                {
+                  "name": "Lucky",
+                  "className": "Part",
+                  "guid": "1318423",
+                  "children": [
+                    {
+                      "name": "Decal",
+                      "className": "Decal",
+                      "guid": "1318122"
+                    }
+                  ]
+                },
+                {
+                  "name": "magicEgg",
+                  "className": "Part",
+                  "guid": "1318425",
+                  "children": [
+                    {
+                      "name": "Decal",
+                      "className": "Decal",
+                      "guid": "1318124"
+                    }
+                  ]
+                },
+                {
+                  "name": "Magnet",
+                  "className": "Part",
+                  "guid": "1318418",
+                  "children": [
+                    {
+                      "name": "Decal",
+                      "className": "Decal",
+                      "guid": "1318117"
+                    }
+                  ]
+                },
+                {
+                  "name": "MoreComing",
+                  "className": "Part",
+                  "guid": "1318441",
+                  "children": [
+                    {
+                      "name": "Decal",
+                      "className": "Decal",
+                      "guid": "1318140"
+                    }
+                  ]
+                },
+                {
+                  "name": "Nuke",
+                  "className": "Part",
+                  "guid": "1318432",
+                  "children": [
+                    {
+                      "name": "Decal",
+                      "className": "Decal",
+                      "guid": "1318131"
+                    }
+                  ]
+                },
+                {
+                  "name": "Pet",
+                  "className": "Part",
+                  "guid": "1318410",
+                  "children": [
+                    {
+                      "name": "Decal",
+                      "className": "Decal",
+                      "guid": "1318109"
+                    }
+                  ]
+                },
+                {
+                  "name": "Power",
+                  "className": "Part",
+                  "guid": "1318417",
+                  "children": [
+                    {
+                      "name": "Decal",
+                      "className": "Decal",
+                      "guid": "1318116"
+                    }
+                  ]
+                },
+                {
+                  "name": "READ ME",
+                  "className": "Script",
+                  "guid": "1318442",
+                  "filePaths": [
+                    "sync/Workspace/UIS/Flibpook Icons Pack/READ ME.server.luau"
+                  ]
+                },
+                {
+                  "name": "RebirthBlue",
+                  "className": "Part",
+                  "guid": "1318409",
+                  "children": [
+                    {
+                      "name": "Decal",
+                      "className": "Decal",
+                      "guid": "1318108"
+                    }
+                  ]
+                },
+                {
+                  "name": "RebirthPurple",
+                  "className": "Part",
+                  "guid": "1318412",
+                  "children": [
+                    {
+                      "name": "Decal",
+                      "className": "Decal",
+                      "guid": "1318111"
+                    }
+                  ]
+                },
+                {
+                  "name": "RebirthYellow",
+                  "className": "Part",
+                  "guid": "1318415",
+                  "children": [
+                    {
+                      "name": "Decal",
+                      "className": "Decal",
+                      "guid": "1318114"
+                    }
+                  ]
+                },
+                {
+                  "name": "Shop",
+                  "className": "Part",
+                  "guid": "1318433",
+                  "children": [
+                    {
+                      "name": "Decal",
+                      "className": "Decal",
+                      "guid": "1318132"
+                    }
+                  ]
+                },
+                {
+                  "name": "SkipStage",
+                  "className": "Part",
+                  "guid": "1318413",
+                  "children": [
+                    {
+                      "name": "Decal",
+                      "className": "Decal",
+                      "guid": "1318112"
+                    }
+                  ]
+                },
+                {
+                  "name": "SoundOffRed",
+                  "className": "Part",
+                  "guid": "1318436",
+                  "children": [
+                    {
+                      "name": "Decal",
+                      "className": "Decal",
+                      "guid": "1318135"
+                    }
+                  ]
+                },
+                {
+                  "name": "SoundOffWhite",
+                  "className": "Part",
+                  "guid": "1318435",
+                  "children": [
+                    {
+                      "name": "Decal",
+                      "className": "Decal",
+                      "guid": "1318134"
+                    }
+                  ]
+                },
+                {
+                  "name": "SoundOnGreen",
+                  "className": "Part",
+                  "guid": "1318439",
+                  "children": [
+                    {
+                      "name": "Decal",
+                      "className": "Decal",
+                      "guid": "1318138"
+                    }
+                  ]
+                },
+                {
+                  "name": "SoundOnWhite",
+                  "className": "Part",
+                  "guid": "1318440",
+                  "children": [
+                    {
+                      "name": "Decal",
+                      "className": "Decal",
+                      "guid": "1318139"
+                    }
+                  ]
+                },
+                {
+                  "name": "SpinWheel",
+                  "className": "Part",
+                  "guid": "1318437",
+                  "children": [
+                    {
+                      "name": "Decal",
+                      "className": "Decal",
+                      "guid": "1318136"
+                    }
+                  ]
+                },
+                {
+                  "name": "Teleport",
+                  "className": "Part",
+                  "guid": "1318422",
+                  "children": [
+                    {
+                      "name": "Decal",
+                      "className": "Decal",
+                      "guid": "1318121"
+                    }
+                  ]
+                },
+                {
+                  "name": "Trade",
+                  "className": "Part",
+                  "guid": "1318414",
+                  "children": [
+                    {
+                      "name": "Decal",
+                      "className": "Decal",
+                      "guid": "1318113"
+                    }
+                  ]
+                },
+                {
+                  "name": "Trail",
+                  "className": "Part",
+                  "guid": "1318421",
+                  "children": [
+                    {
+                      "name": "Decal",
+                      "className": "Decal",
+                      "guid": "1318120"
+                    }
+                  ]
+                },
+                {
+                  "name": "Trophy",
+                  "className": "Part",
+                  "guid": "1318424",
+                  "children": [
+                    {
+                      "name": "Decal",
+                      "className": "Decal",
+                      "guid": "1318123"
+                    }
+                  ]
+                },
+                {
+                  "name": "World",
+                  "className": "Part",
+                  "guid": "1318427",
+                  "children": [
+                    {
+                      "name": "Decal",
+                      "className": "Decal",
+                      "guid": "1318126"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "name": "Monochrome White UI Icon Pack",
+              "className": "Model",
+              "guid": "1318173",
+              "children": [
+                {
+                  "name": "Title",
+                  "className": "Folder",
+                  "guid": "1318158",
+                  "children": [
+                    {
+                      "name": "Ui_Icon_Title",
+                      "className": "Part",
+                      "guid": "1318332",
+                      "children": [
+                        {
+                          "name": "SurfaceGui",
+                          "className": "SurfaceGui",
+                          "guid": "1318461",
+                          "children": [
+                            {
+                              "name": "Title",
+                              "className": "TextLabel",
+                              "guid": "1318480"
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "name": "UI_Icons_White",
+                  "className": "Folder",
+                  "guid": "1318159",
+                  "children": [
+                    {
+                      "name": "Background",
+                      "className": "Part",
+                      "guid": "1318405"
+                    },
+                    {
+                      "name": "IconRows",
+                      "className": "Folder",
+                      "guid": "1318160",
+                      "children": [
+                        {
+                          "name": "Row1",
+                          "className": "Folder",
+                          "guid": "1318163",
+                          "children": [
+                            {
+                              "name": "Backpack_1",
+                              "className": "Part",
+                              "guid": "1318348",
+                              "children": [
+                                {
+                                  "name": "Decal",
+                                  "className": "Decal",
+                                  "guid": "1318048"
+                                }
+                              ]
+                            },
+                            {
+                              "name": "Baseball_Bat",
+                              "className": "Part",
+                              "guid": "1318345",
+                              "children": [
+                                {
+                                  "name": "Decal",
+                                  "className": "Decal",
+                                  "guid": "1318045"
+                                }
+                              ]
+                            },
+                            {
+                              "name": "Flashlight",
+                              "className": "Part",
+                              "guid": "1318350",
+                              "children": [
+                                {
+                                  "name": "Decal",
+                                  "className": "Decal",
+                                  "guid": "1318050"
+                                }
+                              ]
+                            },
+                            {
+                              "name": "Pistol",
+                              "className": "Part",
+                              "guid": "1318347",
+                              "children": [
+                                {
+                                  "name": "Decal",
+                                  "className": "Decal",
+                                  "guid": "1318047"
+                                }
+                              ]
+                            },
+                            {
+                              "name": "Robux_Icon",
+                              "className": "Part",
+                              "guid": "1318346",
+                              "children": [
+                                {
+                                  "name": "Decal",
+                                  "className": "Decal",
+                                  "guid": "1318046"
+                                }
+                              ]
+                            },
+                            {
+                              "name": "Settings",
+                              "className": "Part",
+                              "guid": "1318349",
+                              "children": [
+                                {
+                                  "name": "Decal",
+                                  "className": "Decal",
+                                  "guid": "1318049"
+                                }
+                              ]
+                            }
+                          ]
+                        },
+                        {
+                          "name": "Row10",
+                          "className": "Folder",
+                          "guid": "1318170",
+                          "children": [
+                            {
+                              "name": "Arrow",
+                              "className": "Part",
+                              "guid": "1318389",
+                              "children": [
+                                {
+                                  "name": "Decal",
+                                  "className": "Decal",
+                                  "guid": "1318089"
+                                }
+                              ]
+                            },
+                            {
+                              "name": "Computer",
+                              "className": "Part",
+                              "guid": "1318391",
+                              "children": [
+                                {
+                                  "name": "Decal",
+                                  "className": "Decal",
+                                  "guid": "1318091"
+                                }
+                              ]
+                            },
+                            {
+                              "name": "Dynamite",
+                              "className": "Part",
+                              "guid": "1318388",
+                              "children": [
+                                {
+                                  "name": "Decal",
+                                  "className": "Decal",
+                                  "guid": "1318088"
+                                }
+                              ]
+                            },
+                            {
+                              "name": "Flamethrower",
+                              "className": "Part",
+                              "guid": "1318390",
+                              "children": [
+                                {
+                                  "name": "Decal",
+                                  "className": "Decal",
+                                  "guid": "1318090"
+                                }
+                              ]
+                            },
+                            {
+                              "name": "Machete",
+                              "className": "Part",
+                              "guid": "1318387",
+                              "children": [
+                                {
+                                  "name": "Decal",
+                                  "className": "Decal",
+                                  "guid": "1318087"
+                                }
+                              ]
+                            },
+                            {
+                              "name": "Revolver",
+                              "className": "Part",
+                              "guid": "1318392",
+                              "children": [
+                                {
+                                  "name": "Decal",
+                                  "className": "Decal",
+                                  "guid": "1318092"
+                                }
+                              ]
+                            }
+                          ]
+                        },
+                        {
+                          "name": "Row11",
+                          "className": "Folder",
+                          "guid": "1318171",
+                          "children": [
+                            {
+                              "name": "Backpack_2",
+                              "className": "Part",
+                              "guid": "1318394",
+                              "children": [
+                                {
+                                  "name": "Decal",
+                                  "className": "Decal",
+                                  "guid": "1318094"
+                                }
+                              ]
+                            },
+                            {
+                              "name": "Backpack_3",
+                              "className": "Part",
+                              "guid": "1318395",
+                              "children": [
+                                {
+                                  "name": "Decal",
+                                  "className": "Decal",
+                                  "guid": "1318095"
+                                }
+                              ]
+                            },
+                            {
+                              "name": "Blurry Circle",
+                              "className": "Part",
+                              "guid": "1318393",
+                              "children": [
+                                {
+                                  "name": "Decal",
+                                  "className": "Decal",
+                                  "guid": "1318093"
+                                }
+                              ]
+                            },
+                            {
+                              "name": "Cancel_Circle",
+                              "className": "Part",
+                              "guid": "1318398",
+                              "children": [
+                                {
+                                  "name": "Decal",
+                                  "className": "Decal",
+                                  "guid": "1318098"
+                                }
+                              ]
+                            },
+                            {
+                              "name": "Circle",
+                              "className": "Part",
+                              "guid": "1318397",
+                              "children": [
+                                {
+                                  "name": "Decal",
+                                  "className": "Decal",
+                                  "guid": "1318097"
+                                }
+                              ]
+                            },
+                            {
+                              "name": "Star",
+                              "className": "Part",
+                              "guid": "1318396",
+                              "children": [
+                                {
+                                  "name": "Decal",
+                                  "className": "Decal",
+                                  "guid": "1318096"
+                                }
+                              ]
+                            }
+                          ]
+                        },
+                        {
+                          "name": "Row12",
+                          "className": "Folder",
+                          "guid": "1318172",
+                          "children": [
+                            {
+                              "name": "Boot",
+                              "className": "Part",
+                              "guid": "1318400",
+                              "children": [
+                                {
+                                  "name": "Decal",
+                                  "className": "Decal",
+                                  "guid": "1318100"
+                                }
+                              ]
+                            },
+                            {
+                              "name": "Fancy_Shoe",
+                              "className": "Part",
+                              "guid": "1318399",
+                              "children": [
+                                {
+                                  "name": "Decal",
+                                  "className": "Decal",
+                                  "guid": "1318099"
+                                }
+                              ]
+                            },
+                            {
+                              "name": "Heart",
+                              "className": "Part",
+                              "guid": "1318402",
+                              "children": [
+                                {
+                                  "name": "Decal",
+                                  "className": "Decal",
+                                  "guid": "1318102"
+                                }
+                              ]
+                            },
+                            {
+                              "name": "Potion",
+                              "className": "Part",
+                              "guid": "1318401",
+                              "children": [
+                                {
+                                  "name": "Decal",
+                                  "className": "Decal",
+                                  "guid": "1318101"
+                                }
+                              ]
+                            },
+                            {
+                              "name": "Shield",
+                              "className": "Part",
+                              "guid": "1318404",
+                              "children": [
+                                {
+                                  "name": "Decal",
+                                  "className": "Decal",
+                                  "guid": "1318104"
+                                }
+                              ]
+                            },
+                            {
+                              "name": "Sword",
+                              "className": "Part",
+                              "guid": "1318403",
+                              "children": [
+                                {
+                                  "name": "Decal",
+                                  "className": "Decal",
+                                  "guid": "1318103"
+                                }
+                              ]
+                            }
+                          ]
+                        },
+                        {
+                          "name": "Row2",
+                          "className": "Folder",
+                          "guid": "1318164",
+                          "children": [
+                            {
+                              "name": "Checkmark",
+                              "className": "Part",
+                              "guid": "1318352",
+                              "children": [
+                                {
+                                  "name": "Decal",
+                                  "className": "Decal",
+                                  "guid": "1318052"
+                                }
+                              ]
+                            },
+                            {
+                              "name": "Eye",
+                              "className": "Part",
+                              "guid": "1318351",
+                              "children": [
+                                {
+                                  "name": "Decal",
+                                  "className": "Decal",
+                                  "guid": "1318051"
+                                }
+                              ]
+                            },
+                            {
+                              "name": "Info",
+                              "className": "Part",
+                              "guid": "1318353",
+                              "children": [
+                                {
+                                  "name": "Decal",
+                                  "className": "Decal",
+                                  "guid": "1318053"
+                                }
+                              ]
+                            },
+                            {
+                              "name": "Key",
+                              "className": "Part",
+                              "guid": "1318355",
+                              "children": [
+                                {
+                                  "name": "Decal",
+                                  "className": "Decal",
+                                  "guid": "1318055"
+                                }
+                              ]
+                            },
+                            {
+                              "name": "Roblox",
+                              "className": "Part",
+                              "guid": "1318356",
+                              "children": [
+                                {
+                                  "name": "Decal",
+                                  "className": "Decal",
+                                  "guid": "1318056"
+                                }
+                              ]
+                            },
+                            {
+                              "name": "Warning",
+                              "className": "Part",
+                              "guid": "1318354",
+                              "children": [
+                                {
+                                  "name": "Decal",
+                                  "className": "Decal",
+                                  "guid": "1318054"
+                                }
+                              ]
+                            }
+                          ]
+                        },
+                        {
+                          "name": "Row3",
+                          "className": "Folder",
+                          "guid": "1318165",
+                          "children": [
+                            {
+                              "name": "Camera",
+                              "className": "Part",
+                              "guid": "1318358",
+                              "children": [
+                                {
+                                  "name": "Decal",
+                                  "className": "Decal",
+                                  "guid": "1318058"
+                                }
+                              ]
+                            },
+                            {
+                              "name": "Chat",
+                              "className": "Part",
+                              "guid": "1318359",
+                              "children": [
+                                {
+                                  "name": "Decal",
+                                  "className": "Decal",
+                                  "guid": "1318059"
+                                }
+                              ]
+                            },
+                            {
+                              "name": "Crown",
+                              "className": "Part",
+                              "guid": "1318362",
+                              "children": [
+                                {
+                                  "name": "Decal",
+                                  "className": "Decal",
+                                  "guid": "1318062"
+                                }
+                              ]
+                            },
+                            {
+                              "name": "Door",
+                              "className": "Part",
+                              "guid": "1318357",
+                              "children": [
+                                {
+                                  "name": "Decal",
+                                  "className": "Decal",
+                                  "guid": "1318057"
+                                }
+                              ]
+                            },
+                            {
+                              "name": "Home",
+                              "className": "Part",
+                              "guid": "1318360",
+                              "children": [
+                                {
+                                  "name": "Decal",
+                                  "className": "Decal",
+                                  "guid": "1318060"
+                                }
+                              ]
+                            },
+                            {
+                              "name": "Shop",
+                              "className": "Part",
+                              "guid": "1318361",
+                              "children": [
+                                {
+                                  "name": "Decal",
+                                  "className": "Decal",
+                                  "guid": "1318061"
+                                }
+                              ]
+                            }
+                          ]
+                        },
+                        {
+                          "name": "Row4",
+                          "className": "Folder",
+                          "guid": "1318166",
+                          "children": [
+                            {
+                              "name": "Brush",
+                              "className": "Part",
+                              "guid": "1318363",
+                              "children": [
+                                {
+                                  "name": "Decal",
+                                  "className": "Decal",
+                                  "guid": "1318063"
+                                }
+                              ]
+                            },
+                            {
+                              "name": "Food",
+                              "className": "Part",
+                              "guid": "1318367",
+                              "children": [
+                                {
+                                  "name": "Decal",
+                                  "className": "Decal",
+                                  "guid": "1318067"
+                                }
+                              ]
+                            },
+                            {
+                              "name": "Rotate",
+                              "className": "Part",
+                              "guid": "1318364",
+                              "children": [
+                                {
+                                  "name": "Decal",
+                                  "className": "Decal",
+                                  "guid": "1318064"
+                                }
+                              ]
+                            },
+                            {
+                              "name": "Sound",
+                              "className": "Part",
+                              "guid": "1318365",
+                              "children": [
+                                {
+                                  "name": "Decal",
+                                  "className": "Decal",
+                                  "guid": "1318065"
+                                }
+                              ]
+                            },
+                            {
+                              "name": "Trash",
+                              "className": "Part",
+                              "guid": "1318366",
+                              "children": [
+                                {
+                                  "name": "Decal",
+                                  "className": "Decal",
+                                  "guid": "1318066"
+                                }
+                              ]
+                            },
+                            {
+                              "name": "Users",
+                              "className": "Part",
+                              "guid": "1318368",
+                              "children": [
+                                {
+                                  "name": "Decal",
+                                  "className": "Decal",
+                                  "guid": "1318068"
+                                }
+                              ]
+                            }
+                          ]
+                        },
+                        {
+                          "name": "Row5",
+                          "className": "Folder",
+                          "guid": "1318167",
+                          "children": [
+                            {
+                              "name": "Badge",
+                              "className": "Part",
+                              "guid": "1318373",
+                              "children": [
+                                {
+                                  "name": "Decal",
+                                  "className": "Decal",
+                                  "guid": "1318073"
+                                }
+                              ]
+                            },
+                            {
+                              "name": "Headlight",
+                              "className": "Part",
+                              "guid": "1318372",
+                              "children": [
+                                {
+                                  "name": "Decal",
+                                  "className": "Decal",
+                                  "guid": "1318072"
+                                }
+                              ]
+                            },
+                            {
+                              "name": "Horn",
+                              "className": "Part",
+                              "guid": "1318370",
+                              "children": [
+                                {
+                                  "name": "Decal",
+                                  "className": "Decal",
+                                  "guid": "1318070"
+                                }
+                              ]
+                            },
+                            {
+                              "name": "Power",
+                              "className": "Part",
+                              "guid": "1318369",
+                              "children": [
+                                {
+                                  "name": "Decal",
+                                  "className": "Decal",
+                                  "guid": "1318069"
+                                }
+                              ]
+                            },
+                            {
+                              "name": "Rotate",
+                              "className": "Part",
+                              "guid": "1318374",
+                              "children": [
+                                {
+                                  "name": "Decal",
+                                  "className": "Decal",
+                                  "guid": "1318074"
+                                }
+                              ]
+                            },
+                            {
+                              "name": "Tix",
+                              "className": "Part",
+                              "guid": "1318371",
+                              "children": [
+                                {
+                                  "name": "Decal",
+                                  "className": "Decal",
+                                  "guid": "1318071"
+                                }
+                              ]
+                            }
+                          ]
+                        },
+                        {
+                          "name": "Row6",
+                          "className": "Folder",
+                          "guid": "1318168",
+                          "children": [
+                            {
+                              "name": "Hamburger",
+                              "className": "Part",
+                              "guid": "1318377",
+                              "children": [
+                                {
+                                  "name": "Decal",
+                                  "className": "Decal",
+                                  "guid": "1318077"
+                                }
+                              ]
+                            },
+                            {
+                              "name": "Health",
+                              "className": "Part",
+                              "guid": "1318376",
+                              "children": [
+                                {
+                                  "name": "Decal",
+                                  "className": "Decal",
+                                  "guid": "1318076"
+                                }
+                              ]
+                            },
+                            {
+                              "name": "Profile",
+                              "className": "Part",
+                              "guid": "1318375",
+                              "children": [
+                                {
+                                  "name": "Decal",
+                                  "className": "Decal",
+                                  "guid": "1318075"
+                                }
+                              ]
+                            },
+                            {
+                              "name": "Sprint",
+                              "className": "Part",
+                              "guid": "1318380",
+                              "children": [
+                                {
+                                  "name": "Decal",
+                                  "className": "Decal",
+                                  "guid": "1318080"
+                                }
+                              ]
+                            },
+                            {
+                              "name": "Up_Arrow",
+                              "className": "Part",
+                              "guid": "1318378",
+                              "children": [
+                                {
+                                  "name": "Decal",
+                                  "className": "Decal",
+                                  "guid": "1318078"
+                                }
+                              ]
+                            },
+                            {
+                              "name": "World",
+                              "className": "Part",
+                              "guid": "1318379",
+                              "children": [
+                                {
+                                  "name": "Decal",
+                                  "className": "Decal",
+                                  "guid": "1318079"
+                                }
+                              ]
+                            }
+                          ]
+                        },
+                        {
+                          "name": "Row7",
+                          "className": "Folder",
+                          "guid": "1318169",
+                          "children": [
+                            {
+                              "name": "Phone",
+                              "className": "Part",
+                              "guid": "1318385",
+                              "children": [
+                                {
+                                  "name": "Decal",
+                                  "className": "Decal",
+                                  "guid": "1318085"
+                                }
+                              ]
+                            },
+                            {
+                              "name": "Pistol_Bullet",
+                              "className": "Part",
+                              "guid": "1318383",
+                              "children": [
+                                {
+                                  "name": "Decal",
+                                  "className": "Decal",
+                                  "guid": "1318083"
+                                }
+                              ]
+                            },
+                            {
+                              "name": "Rifle_Bullet",
+                              "className": "Part",
+                              "guid": "1318381",
+                              "children": [
+                                {
+                                  "name": "Decal",
+                                  "className": "Decal",
+                                  "guid": "1318081"
+                                }
+                              ]
+                            },
+                            {
+                              "name": "Shotgun_Shell",
+                              "className": "Part",
+                              "guid": "1318382",
+                              "children": [
+                                {
+                                  "name": "Decal",
+                                  "className": "Decal",
+                                  "guid": "1318082"
+                                }
+                              ]
+                            },
+                            {
+                              "name": "Siren",
+                              "className": "Part",
+                              "guid": "1318384",
+                              "children": [
+                                {
+                                  "name": "Decal",
+                                  "className": "Decal",
+                                  "guid": "1318084"
+                                }
+                              ]
+                            },
+                            {
+                              "name": "Thirst",
+                              "className": "Part",
+                              "guid": "1318386",
+                              "children": [
+                                {
+                                  "name": "Decal",
+                                  "className": "Decal",
+                                  "guid": "1318086"
+                                }
+                              ]
+                            }
+                          ]
+                        },
+                        {
+                          "name": "Row8",
+                          "className": "Folder",
+                          "guid": "1318161",
+                          "children": [
+                            {
+                              "name": "Checkerboard",
+                              "className": "Part",
+                              "guid": "1318337",
+                              "children": [
+                                {
+                                  "name": "Decal",
+                                  "className": "Decal",
+                                  "guid": "1318037"
+                                }
+                              ]
+                            },
+                            {
+                              "name": "Closed_Eye",
+                              "className": "Part",
+                              "guid": "1318334",
+                              "children": [
+                                {
+                                  "name": "Decal",
+                                  "className": "Decal",
+                                  "guid": "1318034"
+                                }
+                              ]
+                            },
+                            {
+                              "name": "Compass",
+                              "className": "Part",
+                              "guid": "1318338",
+                              "children": [
+                                {
+                                  "name": "Decal",
+                                  "className": "Decal",
+                                  "guid": "1318038"
+                                }
+                              ]
+                            },
+                            {
+                              "name": "Hazard",
+                              "className": "Part",
+                              "guid": "1318336",
+                              "children": [
+                                {
+                                  "name": "Decal",
+                                  "className": "Decal",
+                                  "guid": "1318036"
+                                }
+                              ]
+                            },
+                            {
+                              "name": "Premium",
+                              "className": "Part",
+                              "guid": "1318333",
+                              "children": [
+                                {
+                                  "name": "Decal",
+                                  "className": "Decal",
+                                  "guid": "1318033"
+                                }
+                              ]
+                            },
+                            {
+                              "name": "Radio",
+                              "className": "Part",
+                              "guid": "1318335",
+                              "children": [
+                                {
+                                  "name": "Decal",
+                                  "className": "Decal",
+                                  "guid": "1318035"
+                                }
+                              ]
+                            }
+                          ]
+                        },
+                        {
+                          "name": "Row9",
+                          "className": "Folder",
+                          "guid": "1318162",
+                          "children": [
+                            {
+                              "name": "Briefcase",
+                              "className": "Part",
+                              "guid": "1318342",
+                              "children": [
+                                {
+                                  "name": "Decal",
+                                  "className": "Decal",
+                                  "guid": "1318042"
+                                }
+                              ]
+                            },
+                            {
+                              "name": "Heavy_Pistol",
+                              "className": "Part",
+                              "guid": "1318341",
+                              "children": [
+                                {
+                                  "name": "Decal",
+                                  "className": "Decal",
+                                  "guid": "1318041"
+                                }
+                              ]
+                            },
+                            {
+                              "name": "Knife",
+                              "className": "Part",
+                              "guid": "1318339",
+                              "children": [
+                                {
+                                  "name": "Decal",
+                                  "className": "Decal",
+                                  "guid": "1318039"
+                                }
+                              ]
+                            },
+                            {
+                              "name": "Smg",
+                              "className": "Part",
+                              "guid": "1318343",
+                              "children": [
+                                {
+                                  "name": "Decal",
+                                  "className": "Decal",
+                                  "guid": "1318043"
+                                }
+                              ]
+                            },
+                            {
+                              "name": "Spawn_Location",
+                              "className": "Part",
+                              "guid": "1318340",
+                              "children": [
+                                {
+                                  "name": "Decal",
+                                  "className": "Decal",
+                                  "guid": "1318040"
+                                }
+                              ]
+                            },
+                            {
+                              "name": "User",
+                              "className": "Part",
+                              "guid": "1318344",
+                              "children": [
+                                {
+                                  "name": "Decal",
+                                  "className": "Decal",
+                                  "guid": "1318044"
+                                }
+                              ]
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "name": "Simulator Icon Pack",
+              "className": "Folder",
+              "guid": "1318142",
+              "children": [
+                {
+                  "name": "Arrows",
+                  "className": "Folder",
+                  "guid": "1318143",
+                  "children": [
+                    {
+                      "name": "Back/Undo",
+                      "className": "Part",
+                      "guid": "1318184",
+                      "children": [
+                        {
+                          "name": "Decal",
+                          "className": "Decal",
+                          "guid": "1317930"
+                        }
+                      ]
+                    },
+                    {
+                      "name": "Down",
+                      "className": "Part",
+                      "guid": "1318182",
+                      "children": [
+                        {
+                          "name": "Decal",
+                          "className": "Decal",
+                          "guid": "1317928"
+                        }
+                      ]
+                    },
+                    {
+                      "name": "Expand",
+                      "className": "Part",
+                      "guid": "1318177",
+                      "children": [
+                        {
+                          "name": "Decal",
+                          "className": "Decal",
+                          "guid": "1317923"
+                        }
+                      ]
+                    },
+                    {
+                      "name": "GoldUpgrade",
+                      "className": "Part",
+                      "guid": "1318175",
+                      "children": [
+                        {
+                          "name": "Decal",
+                          "className": "Decal",
+                          "guid": "1317921"
+                        }
+                      ]
+                    },
+                    {
+                      "name": "Left",
+                      "className": "Part",
+                      "guid": "1318178",
+                      "children": [
+                        {
+                          "name": "Decal",
+                          "className": "Decal",
+                          "guid": "1317924"
+                        }
+                      ]
+                    },
+                    {
+                      "name": "Rebirth",
+                      "className": "Part",
+                      "guid": "1318179",
+                      "children": [
+                        {
+                          "name": "Decal",
+                          "className": "Decal",
+                          "guid": "1317925"
+                        }
+                      ]
+                    },
+                    {
+                      "name": "Right",
+                      "className": "Part",
+                      "guid": "1318183",
+                      "children": [
+                        {
+                          "name": "Decal",
+                          "className": "Decal",
+                          "guid": "1317929"
+                        }
+                      ]
+                    },
+                    {
+                      "name": "Trade",
+                      "className": "Part",
+                      "guid": "1318180",
+                      "children": [
+                        {
+                          "name": "Decal",
+                          "className": "Decal",
+                          "guid": "1317926"
+                        }
+                      ]
+                    },
+                    {
+                      "name": "Up",
+                      "className": "Part",
+                      "guid": "1318176",
+                      "children": [
+                        {
+                          "name": "Decal",
+                          "className": "Decal",
+                          "guid": "1317922"
+                        }
+                      ]
+                    },
+                    {
+                      "name": "Upgrade",
+                      "className": "Part",
+                      "guid": "1318181",
+                      "children": [
+                        {
+                          "name": "Decal",
+                          "className": "Decal",
+                          "guid": "1317927"
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "name": "Cash",
+                  "className": "Folder",
+                  "guid": "1318149",
+                  "children": [
+                    {
+                      "name": "BlueCash",
+                      "className": "Part",
+                      "guid": "1318254",
+                      "children": [
+                        {
+                          "name": "Decal",
+                          "className": "Decal",
+                          "guid": "1317955"
+                        }
+                      ]
+                    },
+                    {
+                      "name": "CashBag",
+                      "className": "Part",
+                      "guid": "1318256",
+                      "children": [
+                        {
+                          "name": "Decal",
+                          "className": "Decal",
+                          "guid": "1317957"
+                        }
+                      ]
+                    },
+                    {
+                      "name": "CashChest",
+                      "className": "Part",
+                      "guid": "1318255",
+                      "children": [
+                        {
+                          "name": "Decal",
+                          "className": "Decal",
+                          "guid": "1317956"
+                        }
+                      ]
+                    },
+                    {
+                      "name": "CashIcon",
+                      "className": "Part",
+                      "guid": "1318258",
+                      "children": [
+                        {
+                          "name": "Decal",
+                          "className": "Decal",
+                          "guid": "1317959"
+                        }
+                      ]
+                    },
+                    {
+                      "name": "CashPile",
+                      "className": "Part",
+                      "guid": "1318257",
+                      "children": [
+                        {
+                          "name": "Decal",
+                          "className": "Decal",
+                          "guid": "1317958"
+                        }
+                      ]
+                    },
+                    {
+                      "name": "GoldenCash",
+                      "className": "Part",
+                      "guid": "1318253",
+                      "children": [
+                        {
+                          "name": "Decal",
+                          "className": "Decal",
+                          "guid": "1317954"
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "name": "Coins",
+                  "className": "Folder",
+                  "guid": "1318146",
+                  "children": [
+                    {
+                      "name": "BlueCoin",
+                      "className": "Part",
+                      "guid": "1318241",
+                      "children": [
+                        {
+                          "name": "Decal",
+                          "className": "Decal",
+                          "guid": "1317942"
+                        }
+                      ]
+                    },
+                    {
+                      "name": "CoinBag",
+                      "className": "Part",
+                      "guid": "1318238",
+                      "children": [
+                        {
+                          "name": "Decal",
+                          "className": "Decal",
+                          "guid": "1317939"
+                        }
+                      ]
+                    },
+                    {
+                      "name": "CoinChest",
+                      "className": "Part",
+                      "guid": "1318237",
+                      "children": [
+                        {
+                          "name": "Decal",
+                          "className": "Decal",
+                          "guid": "1317938"
+                        }
+                      ]
+                    },
+                    {
+                      "name": "CoinIcon",
+                      "className": "Part",
+                      "guid": "1318240",
+                      "children": [
+                        {
+                          "name": "Decal",
+                          "className": "Decal",
+                          "guid": "1317941"
+                        }
+                      ]
+                    },
+                    {
+                      "name": "CoinStack",
+                      "className": "Part",
+                      "guid": "1318239",
+                      "children": [
+                        {
+                          "name": "Decal",
+                          "className": "Decal",
+                          "guid": "1317940"
+                        }
+                      ]
+                    },
+                    {
+                      "name": "CoinStackIcon",
+                      "className": "Part",
+                      "guid": "1318236",
+                      "children": [
+                        {
+                          "name": "Decal",
+                          "className": "Decal",
+                          "guid": "1317937"
+                        }
+                      ]
+                    },
+                    {
+                      "name": "GreenCoin",
+                      "className": "Part",
+                      "guid": "1318242",
+                      "children": [
+                        {
+                          "name": "Decal",
+                          "className": "Decal",
+                          "guid": "1317943"
+                        }
+                      ]
+                    },
+                    {
+                      "name": "LowPolyCoin",
+                      "className": "Part",
+                      "guid": "1318244",
+                      "children": [
+                        {
+                          "name": "Decal",
+                          "className": "Decal",
+                          "guid": "1317945"
+                        }
+                      ]
+                    },
+                    {
+                      "name": "PurpleCoin",
+                      "className": "Part",
+                      "guid": "1318235",
+                      "children": [
+                        {
+                          "name": "Decal",
+                          "className": "Decal",
+                          "guid": "1317936"
+                        }
+                      ]
+                    },
+                    {
+                      "name": "RedCoin",
+                      "className": "Part",
+                      "guid": "1318243",
+                      "children": [
+                        {
+                          "name": "Decal",
+                          "className": "Decal",
+                          "guid": "1317944"
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "name": "Currency",
+                  "className": "Folder",
+                  "guid": "1318154",
+                  "children": [
+                    {
+                      "name": "BetaGem",
+                      "className": "Part",
+                      "guid": "1318312",
+                      "children": [
+                        {
+                          "name": "Decal",
+                          "className": "Decal",
+                          "guid": "1318013"
+                        }
+                      ]
+                    },
+                    {
+                      "name": "Bomb",
+                      "className": "Part",
+                      "guid": "1318313",
+                      "children": [
+                        {
+                          "name": "Decal",
+                          "className": "Decal",
+                          "guid": "1318014"
+                        }
+                      ]
+                    },
+                    {
+                      "name": "Cookie",
+                      "className": "Part",
+                      "guid": "1318310",
+                      "children": [
+                        {
+                          "name": "Decal",
+                          "className": "Decal",
+                          "guid": "1318011"
+                        }
+                      ]
+                    },
+                    {
+                      "name": "Fire",
+                      "className": "Part",
+                      "guid": "1318311",
+                      "children": [
+                        {
+                          "name": "Decal",
+                          "className": "Decal",
+                          "guid": "1318012"
+                        }
+                      ]
+                    },
+                    {
+                      "name": "Key",
+                      "className": "Part",
+                      "guid": "1318314",
+                      "children": [
+                        {
+                          "name": "Decal",
+                          "className": "Decal",
+                          "guid": "1318015"
+                        }
+                      ]
+                    },
+                    {
+                      "name": "Ticket",
+                      "className": "Part",
+                      "guid": "1318315",
+                      "children": [
+                        {
+                          "name": "Decal",
+                          "className": "Decal",
+                          "guid": "1318016"
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "name": "Cursors",
+                  "className": "Folder",
+                  "guid": "1318156",
+                  "children": [
+                    {
+                      "name": "Base",
+                      "className": "Part",
+                      "guid": "1318322",
+                      "children": [
+                        {
+                          "name": "Decal",
+                          "className": "Decal",
+                          "guid": "1318023"
+                        }
+                      ]
+                    },
+                    {
+                      "name": "Classic",
+                      "className": "Part",
+                      "guid": "1318324",
+                      "children": [
+                        {
+                          "name": "Decal",
+                          "className": "Decal",
+                          "guid": "1318025"
+                        }
+                      ]
+                    },
+                    {
+                      "name": "Click",
+                      "className": "Part",
+                      "guid": "1318323",
+                      "children": [
+                        {
+                          "name": "Decal",
+                          "className": "Decal",
+                          "guid": "1318024"
+                        }
+                      ]
+                    },
+                    {
+                      "name": "NoOutline",
+                      "className": "Part",
+                      "guid": "1318325",
+                      "children": [
+                        {
+                          "name": "Decal",
+                          "className": "Decal",
+                          "guid": "1318026"
+                        }
+                      ]
+                    },
+                    {
+                      "name": "Shiny",
+                      "className": "Part",
+                      "guid": "1318320",
+                      "children": [
+                        {
+                          "name": "Decal",
+                          "className": "Decal",
+                          "guid": "1318021"
+                        }
+                      ]
+                    },
+                    {
+                      "name": "Slick",
+                      "className": "Part",
+                      "guid": "1318321",
+                      "children": [
+                        {
+                          "name": "Decal",
+                          "className": "Decal",
+                          "guid": "1318022"
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "name": "Gems",
+                  "className": "Folder",
+                  "guid": "1318147",
+                  "children": [
+                    {
+                      "name": "GemBag",
+                      "className": "Part",
+                      "guid": "1318247",
+                      "children": [
+                        {
+                          "name": "Decal",
+                          "className": "Decal",
+                          "guid": "1317948"
+                        }
+                      ]
+                    },
+                    {
+                      "name": "GemChest",
+                      "className": "Part",
+                      "guid": "1318246",
+                      "children": [
+                        {
+                          "name": "Decal",
+                          "className": "Decal",
+                          "guid": "1317947"
+                        }
+                      ]
+                    },
+                    {
+                      "name": "GemIcon",
+                      "className": "Part",
+                      "guid": "1318245",
+                      "children": [
+                        {
+                          "name": "Decal",
+                          "className": "Decal",
+                          "guid": "1317946"
+                        }
+                      ]
+                    },
+                    {
+                      "name": "GemPile",
+                      "className": "Part",
+                      "guid": "1318248",
+                      "children": [
+                        {
+                          "name": "Decal",
+                          "className": "Decal",
+                          "guid": "1317949"
+                        }
+                      ]
+                    },
+                    {
+                      "name": "SmallGemIcon",
+                      "className": "Part",
+                      "guid": "1318249",
+                      "children": [
+                        {
+                          "name": "Decal",
+                          "className": "Decal",
+                          "guid": "1317950"
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "name": "Gifts",
+                  "className": "Folder",
+                  "guid": "1318157",
+                  "children": [
+                    {
+                      "name": "BlueGift",
+                      "className": "Part",
+                      "guid": "1318327",
+                      "children": [
+                        {
+                          "name": "Decal",
+                          "className": "Decal",
+                          "guid": "1318028"
+                        }
+                      ]
+                    },
+                    {
+                      "name": "Gift",
+                      "className": "Part",
+                      "guid": "1318329",
+                      "children": [
+                        {
+                          "name": "Decal",
+                          "className": "Decal",
+                          "guid": "1318030"
+                        }
+                      ]
+                    },
+                    {
+                      "name": "MultiGifts",
+                      "className": "Part",
+                      "guid": "1318326",
+                      "children": [
+                        {
+                          "name": "Decal",
+                          "className": "Decal",
+                          "guid": "1318027"
+                        }
+                      ]
+                    },
+                    {
+                      "name": "PurpleGift",
+                      "className": "Part",
+                      "guid": "1318330",
+                      "children": [
+                        {
+                          "name": "Decal",
+                          "className": "Decal",
+                          "guid": "1318031"
+                        }
+                      ]
+                    },
+                    {
+                      "name": "RedGift",
+                      "className": "Part",
+                      "guid": "1318331",
+                      "children": [
+                        {
+                          "name": "Decal",
+                          "className": "Decal",
+                          "guid": "1318032"
+                        }
+                      ]
+                    },
+                    {
+                      "name": "RedGift2",
+                      "className": "Part",
+                      "guid": "1318328",
+                      "children": [
+                        {
+                          "name": "Decal",
+                          "className": "Decal",
+                          "guid": "1318029"
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "name": "Luck",
+                  "className": "Folder",
+                  "guid": "1318148",
+                  "children": [
+                    {
+                      "name": "NormalLuck",
+                      "className": "Part",
+                      "guid": "1318252",
+                      "children": [
+                        {
+                          "name": "Decal",
+                          "className": "Decal",
+                          "guid": "1317953"
+                        }
+                      ]
+                    },
+                    {
+                      "name": "SuperLuck",
+                      "className": "Part",
+                      "guid": "1318251",
+                      "children": [
+                        {
+                          "name": "Decal",
+                          "className": "Decal",
+                          "guid": "1317952"
+                        }
+                      ]
+                    },
+                    {
+                      "name": "UltraLuck",
+                      "className": "Part",
+                      "guid": "1318250",
+                      "children": [
+                        {
+                          "name": "Decal",
+                          "className": "Decal",
+                          "guid": "1317951"
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "name": "Menus",
+                  "className": "Folder",
+                  "guid": "1318153",
+                  "children": [
+                    {
+                      "name": "Codes",
+                      "className": "Part",
+                      "guid": "1318309",
+                      "children": [
+                        {
+                          "name": "Decal",
+                          "className": "Decal",
+                          "guid": "1318010"
+                        }
+                      ]
+                    },
+                    {
+                      "name": "CubePets",
+                      "className": "Part",
+                      "guid": "1318305",
+                      "children": [
+                        {
+                          "name": "Decal",
+                          "className": "Decal",
+                          "guid": "1318006"
+                        }
+                      ]
+                    },
+                    {
+                      "name": "Friends",
+                      "className": "Part",
+                      "guid": "1318294",
+                      "children": [
+                        {
+                          "name": "Decal",
+                          "className": "Decal",
+                          "guid": "1317995"
+                        }
+                      ]
+                    },
+                    {
+                      "name": "Index",
+                      "className": "Part",
+                      "guid": "1318304",
+                      "children": [
+                        {
+                          "name": "Decal",
+                          "className": "Decal",
+                          "guid": "1318005"
+                        }
+                      ]
+                    },
+                    {
+                      "name": "Inventory",
+                      "className": "Part",
+                      "guid": "1318308",
+                      "children": [
+                        {
+                          "name": "Decal",
+                          "className": "Decal",
+                          "guid": "1318009"
+                        }
+                      ]
+                    },
+                    {
+                      "name": "Pets",
+                      "className": "Part",
+                      "guid": "1318300",
+                      "children": [
+                        {
+                          "name": "Decal",
+                          "className": "Decal",
+                          "guid": "1318001"
+                        }
+                      ]
+                    },
+                    {
+                      "name": "Quests",
+                      "className": "Part",
+                      "guid": "1318295",
+                      "children": [
+                        {
+                          "name": "Decal",
+                          "className": "Decal",
+                          "guid": "1317996"
+                        }
+                      ]
+                    },
+                    {
+                      "name": "Rewards",
+                      "className": "Part",
+                      "guid": "1318299",
+                      "children": [
+                        {
+                          "name": "Decal",
+                          "className": "Decal",
+                          "guid": "1318000"
+                        }
+                      ]
+                    },
+                    {
+                      "name": "Settings",
+                      "className": "Part",
+                      "guid": "1318296",
+                      "children": [
+                        {
+                          "name": "Decal",
+                          "className": "Decal",
+                          "guid": "1317997"
+                        }
+                      ]
+                    },
+                    {
+                      "name": "Shop",
+                      "className": "Part",
+                      "guid": "1318297",
+                      "children": [
+                        {
+                          "name": "Decal",
+                          "className": "Decal",
+                          "guid": "1317998"
+                        }
+                      ]
+                    },
+                    {
+                      "name": "Shop",
+                      "className": "Part",
+                      "guid": "1318301",
+                      "children": [
+                        {
+                          "name": "Decal",
+                          "className": "Decal",
+                          "guid": "1318002"
+                        }
+                      ]
+                    },
+                    {
+                      "name": "Stats",
+                      "className": "Part",
+                      "guid": "1318307",
+                      "children": [
+                        {
+                          "name": "Decal",
+                          "className": "Decal",
+                          "guid": "1318008"
+                        }
+                      ]
+                    },
+                    {
+                      "name": "Store",
+                      "className": "Part",
+                      "guid": "1318293",
+                      "children": [
+                        {
+                          "name": "Decal",
+                          "className": "Decal",
+                          "guid": "1317994"
+                        }
+                      ]
+                    },
+                    {
+                      "name": "Teleport",
+                      "className": "Part",
+                      "guid": "1318302",
+                      "children": [
+                        {
+                          "name": "Decal",
+                          "className": "Decal",
+                          "guid": "1318003"
+                        }
+                      ]
+                    },
+                    {
+                      "name": "Teleport",
+                      "className": "Part",
+                      "guid": "1318306",
+                      "children": [
+                        {
+                          "name": "Decal",
+                          "className": "Decal",
+                          "guid": "1318007"
+                        }
+                      ]
+                    },
+                    {
+                      "name": "Trash",
+                      "className": "Part",
+                      "guid": "1318298",
+                      "children": [
+                        {
+                          "name": "Decal",
+                          "className": "Decal",
+                          "guid": "1317999"
+                        }
+                      ]
+                    },
+                    {
+                      "name": "VIP",
+                      "className": "Part",
+                      "guid": "1318303",
+                      "children": [
+                        {
+                          "name": "Decal",
+                          "className": "Decal",
+                          "guid": "1318004"
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "name": "Misc",
+                  "className": "Folder",
+                  "guid": "1318152",
+                  "children": [
+                    {
+                      "name": "Accept",
+                      "className": "Part",
+                      "guid": "1318283",
+                      "children": [
+                        {
+                          "name": "Decal",
+                          "className": "Decal",
+                          "guid": "1317984"
+                        }
+                      ]
+                    },
+                    {
+                      "name": "Bobux",
+                      "className": "Part",
+                      "guid": "1318281",
+                      "children": [
+                        {
+                          "name": "Decal",
+                          "className": "Decal",
+                          "guid": "1317982"
+                        }
+                      ]
+                    },
+                    {
+                      "name": "Bobux2",
+                      "className": "Part",
+                      "guid": "1318280",
+                      "children": [
+                        {
+                          "name": "Decal",
+                          "className": "Decal",
+                          "guid": "1317981"
+                        }
+                      ]
+                    },
+                    {
+                      "name": "Deny",
+                      "className": "Part",
+                      "guid": "1318282",
+                      "children": [
+                        {
+                          "name": "Decal",
+                          "className": "Decal",
+                          "guid": "1317983"
+                        }
+                      ]
+                    },
+                    {
+                      "name": "Disc",
+                      "className": "Part",
+                      "guid": "1318275",
+                      "children": [
+                        {
+                          "name": "Decal",
+                          "className": "Decal",
+                          "guid": "1317976"
+                        }
+                      ]
+                    },
+                    {
+                      "name": "Exclaim",
+                      "className": "Part",
+                      "guid": "1318287",
+                      "children": [
+                        {
+                          "name": "Decal",
+                          "className": "Decal",
+                          "guid": "1317988"
+                        }
+                      ]
+                    },
+                    {
+                      "name": "House",
+                      "className": "Part",
+                      "guid": "1318277",
+                      "children": [
+                        {
+                          "name": "Decal",
+                          "className": "Decal",
+                          "guid": "1317978"
+                        }
+                      ]
+                    },
+                    {
+                      "name": "Locate",
+                      "className": "Part",
+                      "guid": "1318279",
+                      "children": [
+                        {
+                          "name": "Decal",
+                          "className": "Decal",
+                          "guid": "1317980"
+                        }
+                      ]
+                    },
+                    {
+                      "name": "LockClosed",
+                      "className": "Part",
+                      "guid": "1318285",
+                      "children": [
+                        {
+                          "name": "Decal",
+                          "className": "Decal",
+                          "guid": "1317986"
+                        }
+                      ]
+                    },
+                    {
+                      "name": "LockOpen",
+                      "className": "Part",
+                      "guid": "1318284",
+                      "children": [
+                        {
+                          "name": "Decal",
+                          "className": "Decal",
+                          "guid": "1317985"
+                        }
+                      ]
+                    },
+                    {
+                      "name": "More",
+                      "className": "Part",
+                      "guid": "1318291",
+                      "children": [
+                        {
+                          "name": "Decal",
+                          "className": "Decal",
+                          "guid": "1317992"
+                        }
+                      ]
+                    },
+                    {
+                      "name": "Paint",
+                      "className": "Part",
+                      "guid": "1318276",
+                      "children": [
+                        {
+                          "name": "Decal",
+                          "className": "Decal",
+                          "guid": "1317977"
+                        }
+                      ]
+                    },
+                    {
+                      "name": "Player",
+                      "className": "Part",
+                      "guid": "1318290",
+                      "children": [
+                        {
+                          "name": "Decal",
+                          "className": "Decal",
+                          "guid": "1317991"
+                        }
+                      ]
+                    },
+                    {
+                      "name": "Question",
+                      "className": "Part",
+                      "guid": "1318286",
+                      "children": [
+                        {
+                          "name": "Decal",
+                          "className": "Decal",
+                          "guid": "1317987"
+                        }
+                      ]
+                    },
+                    {
+                      "name": "SoundOff",
+                      "className": "Part",
+                      "guid": "1318288",
+                      "children": [
+                        {
+                          "name": "Decal",
+                          "className": "Decal",
+                          "guid": "1317989"
+                        }
+                      ]
+                    },
+                    {
+                      "name": "SoundOn",
+                      "className": "Part",
+                      "guid": "1318289",
+                      "children": [
+                        {
+                          "name": "Decal",
+                          "className": "Decal",
+                          "guid": "1317990"
+                        }
+                      ]
+                    },
+                    {
+                      "name": "Spectating",
+                      "className": "Part",
+                      "guid": "1318278",
+                      "children": [
+                        {
+                          "name": "Decal",
+                          "className": "Decal",
+                          "guid": "1317979"
+                        }
+                      ]
+                    },
+                    {
+                      "name": "Verify",
+                      "className": "Part",
+                      "guid": "1318292",
+                      "children": [
+                        {
+                          "name": "Decal",
+                          "className": "Decal",
+                          "guid": "1317993"
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "name": "parts",
+                  "className": "Folder",
+                  "guid": "1318144",
+                  "children": [
+                    {
+                      "name": "Part",
+                      "className": "Part",
+                      "guid": "1318185"
+                    },
+                    {
+                      "name": "Part",
+                      "className": "Part",
+                      "guid": "1318186"
+                    },
+                    {
+                      "name": "Part",
+                      "className": "Part",
+                      "guid": "1318187"
+                    },
+                    {
+                      "name": "Part",
+                      "className": "Part",
+                      "guid": "1318188",
+                      "children": [
+                        {
+                          "name": "SurfaceGui",
+                          "className": "SurfaceGui",
+                          "guid": "1318443",
+                          "children": [
+                            {
+                              "name": "TextLabel",
+                              "className": "TextLabel",
+                              "guid": "1318462",
+                              "children": [
+                                {
+                                  "name": "UIStroke",
+                                  "className": "UIStroke",
+                                  "guid": "1318481"
+                                }
+                              ]
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "name": "Part",
+                      "className": "Part",
+                      "guid": "1318189",
+                      "children": [
+                        {
+                          "name": "SurfaceGui",
+                          "className": "SurfaceGui",
+                          "guid": "1318444",
+                          "children": [
+                            {
+                              "name": "TextLabel",
+                              "className": "TextLabel",
+                              "guid": "1318463",
+                              "children": [
+                                {
+                                  "name": "UIStroke",
+                                  "className": "UIStroke",
+                                  "guid": "1318482"
+                                }
+                              ]
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "name": "Part",
+                      "className": "Part",
+                      "guid": "1318190",
+                      "children": [
+                        {
+                          "name": "SurfaceGui",
+                          "className": "SurfaceGui",
+                          "guid": "1318445",
+                          "children": [
+                            {
+                              "name": "TextLabel",
+                              "className": "TextLabel",
+                              "guid": "1318464",
+                              "children": [
+                                {
+                                  "name": "UIStroke",
+                                  "className": "UIStroke",
+                                  "guid": "1318483"
+                                }
+                              ]
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "name": "Part",
+                      "className": "Part",
+                      "guid": "1318191",
+                      "children": [
+                        {
+                          "name": "SurfaceGui",
+                          "className": "SurfaceGui",
+                          "guid": "1318446",
+                          "children": [
+                            {
+                              "name": "TextLabel",
+                              "className": "TextLabel",
+                              "guid": "1318465",
+                              "children": [
+                                {
+                                  "name": "UIStroke",
+                                  "className": "UIStroke",
+                                  "guid": "1318484"
+                                }
+                              ]
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "name": "Part",
+                      "className": "Part",
+                      "guid": "1318192"
+                    },
+                    {
+                      "name": "Part",
+                      "className": "Part",
+                      "guid": "1318193"
+                    },
+                    {
+                      "name": "Part",
+                      "className": "Part",
+                      "guid": "1318194"
+                    },
+                    {
+                      "name": "Part",
+                      "className": "Part",
+                      "guid": "1318195",
+                      "children": [
+                        {
+                          "name": "SurfaceGui",
+                          "className": "SurfaceGui",
+                          "guid": "1318447",
+                          "children": [
+                            {
+                              "name": "TextLabel",
+                              "className": "TextLabel",
+                              "guid": "1318466",
+                              "children": [
+                                {
+                                  "name": "UIStroke",
+                                  "className": "UIStroke",
+                                  "guid": "1318485"
+                                }
+                              ]
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "name": "Part",
+                      "className": "Part",
+                      "guid": "1318196",
+                      "children": [
+                        {
+                          "name": "SurfaceGui",
+                          "className": "SurfaceGui",
+                          "guid": "1318448",
+                          "children": [
+                            {
+                              "name": "TextLabel",
+                              "className": "TextLabel",
+                              "guid": "1318467",
+                              "children": [
+                                {
+                                  "name": "UIStroke",
+                                  "className": "UIStroke",
+                                  "guid": "1318486"
+                                }
+                              ]
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "name": "Part",
+                      "className": "Part",
+                      "guid": "1318197"
+                    },
+                    {
+                      "name": "Part",
+                      "className": "Part",
+                      "guid": "1318198"
+                    },
+                    {
+                      "name": "Part",
+                      "className": "Part",
+                      "guid": "1318199"
+                    },
+                    {
+                      "name": "Part",
+                      "className": "Part",
+                      "guid": "1318200"
+                    },
+                    {
+                      "name": "Part",
+                      "className": "Part",
+                      "guid": "1318201",
+                      "children": [
+                        {
+                          "name": "SurfaceGui",
+                          "className": "SurfaceGui",
+                          "guid": "1318449",
+                          "children": [
+                            {
+                              "name": "TextLabel",
+                              "className": "TextLabel",
+                              "guid": "1318468",
+                              "children": [
+                                {
+                                  "name": "UIStroke",
+                                  "className": "UIStroke",
+                                  "guid": "1318487"
+                                }
+                              ]
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "name": "Part",
+                      "className": "Part",
+                      "guid": "1318202"
+                    },
+                    {
+                      "name": "Part",
+                      "className": "Part",
+                      "guid": "1318203",
+                      "children": [
+                        {
+                          "name": "SurfaceGui",
+                          "className": "SurfaceGui",
+                          "guid": "1318450",
+                          "children": [
+                            {
+                              "name": "TextLabel",
+                              "className": "TextLabel",
+                              "guid": "1318469",
+                              "children": [
+                                {
+                                  "name": "UIStroke",
+                                  "className": "UIStroke",
+                                  "guid": "1318488"
+                                }
+                              ]
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "name": "Part",
+                      "className": "Part",
+                      "guid": "1318204"
+                    },
+                    {
+                      "name": "Part",
+                      "className": "Part",
+                      "guid": "1318205",
+                      "children": [
+                        {
+                          "name": "SurfaceGui",
+                          "className": "SurfaceGui",
+                          "guid": "1318451",
+                          "children": [
+                            {
+                              "name": "SurfaceGui",
+                              "className": "SurfaceGui",
+                              "guid": "1318452",
+                              "children": [
+                                {
+                                  "name": "TextLabel",
+                                  "className": "TextLabel",
+                                  "guid": "1318471",
+                                  "children": [
+                                    {
+                                      "name": "UIStroke",
+                                      "className": "UIStroke",
+                                      "guid": "1318490"
+                                    }
+                                  ]
+                                }
+                              ]
+                            },
+                            {
+                              "name": "TextLabel",
+                              "className": "TextLabel",
+                              "guid": "1318470",
+                              "children": [
+                                {
+                                  "name": "UIStroke",
+                                  "className": "UIStroke",
+                                  "guid": "1318489"
+                                }
+                              ]
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "name": "Part",
+                      "className": "Part",
+                      "guid": "1318206",
+                      "children": [
+                        {
+                          "name": "SurfaceGui",
+                          "className": "SurfaceGui",
+                          "guid": "1318453",
+                          "children": [
+                            {
+                              "name": "TextLabel",
+                              "className": "TextLabel",
+                              "guid": "1318472",
+                              "children": [
+                                {
+                                  "name": "UIStroke",
+                                  "className": "UIStroke",
+                                  "guid": "1318491"
+                                }
+                              ]
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "name": "Part",
+                      "className": "Part",
+                      "guid": "1318207"
+                    },
+                    {
+                      "name": "Part",
+                      "className": "Part",
+                      "guid": "1318208"
+                    },
+                    {
+                      "name": "Part",
+                      "className": "Part",
+                      "guid": "1318209"
+                    },
+                    {
+                      "name": "Part",
+                      "className": "Part",
+                      "guid": "1318210"
+                    },
+                    {
+                      "name": "Part",
+                      "className": "Part",
+                      "guid": "1318211"
+                    },
+                    {
+                      "name": "Part",
+                      "className": "Part",
+                      "guid": "1318212",
+                      "children": [
+                        {
+                          "name": "SurfaceGui",
+                          "className": "SurfaceGui",
+                          "guid": "1318454",
+                          "children": [
+                            {
+                              "name": "TextLabel",
+                              "className": "TextLabel",
+                              "guid": "1318473",
+                              "children": [
+                                {
+                                  "name": "UIStroke",
+                                  "className": "UIStroke",
+                                  "guid": "1318492"
+                                }
+                              ]
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "name": "Part",
+                      "className": "Part",
+                      "guid": "1318213",
+                      "children": [
+                        {
+                          "name": "SurfaceGui",
+                          "className": "SurfaceGui",
+                          "guid": "1318455",
+                          "children": [
+                            {
+                              "name": "TextLabel",
+                              "className": "TextLabel",
+                              "guid": "1318474",
+                              "children": [
+                                {
+                                  "name": "UIStroke",
+                                  "className": "UIStroke",
+                                  "guid": "1318493"
+                                }
+                              ]
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "name": "Part",
+                      "className": "Part",
+                      "guid": "1318214",
+                      "children": [
+                        {
+                          "name": "SurfaceGui",
+                          "className": "SurfaceGui",
+                          "guid": "1318456",
+                          "children": [
+                            {
+                              "name": "TextLabel",
+                              "className": "TextLabel",
+                              "guid": "1318475",
+                              "children": [
+                                {
+                                  "name": "UIStroke",
+                                  "className": "UIStroke",
+                                  "guid": "1318494"
+                                }
+                              ]
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "name": "Part",
+                      "className": "Part",
+                      "guid": "1318215",
+                      "children": [
+                        {
+                          "name": "SurfaceGui",
+                          "className": "SurfaceGui",
+                          "guid": "1318457",
+                          "children": [
+                            {
+                              "name": "TextLabel",
+                              "className": "TextLabel",
+                              "guid": "1318476",
+                              "children": [
+                                {
+                                  "name": "UIStroke",
+                                  "className": "UIStroke",
+                                  "guid": "1318495"
+                                }
+                              ]
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "name": "Part",
+                      "className": "Part",
+                      "guid": "1318216"
+                    },
+                    {
+                      "name": "Part",
+                      "className": "Part",
+                      "guid": "1318217"
+                    },
+                    {
+                      "name": "Part",
+                      "className": "Part",
+                      "guid": "1318218"
+                    },
+                    {
+                      "name": "Part",
+                      "className": "Part",
+                      "guid": "1318219"
+                    },
+                    {
+                      "name": "Part",
+                      "className": "Part",
+                      "guid": "1318220"
+                    },
+                    {
+                      "name": "Part",
+                      "className": "Part",
+                      "guid": "1318221"
+                    },
+                    {
+                      "name": "Part",
+                      "className": "Part",
+                      "guid": "1318222",
+                      "children": [
+                        {
+                          "name": "SurfaceGui",
+                          "className": "SurfaceGui",
+                          "guid": "1318458",
+                          "children": [
+                            {
+                              "name": "TextLabel",
+                              "className": "TextLabel",
+                              "guid": "1318477",
+                              "children": [
+                                {
+                                  "name": "UIStroke",
+                                  "className": "UIStroke",
+                                  "guid": "1318496"
+                                }
+                              ]
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "name": "Part",
+                      "className": "Part",
+                      "guid": "1318223",
+                      "children": [
+                        {
+                          "name": "SurfaceGui",
+                          "className": "SurfaceGui",
+                          "guid": "1318459",
+                          "children": [
+                            {
+                              "name": "TextLabel",
+                              "className": "TextLabel",
+                              "guid": "1318478",
+                              "children": [
+                                {
+                                  "name": "UIStroke",
+                                  "className": "UIStroke",
+                                  "guid": "1318497"
+                                }
+                              ]
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "name": "Part",
+                      "className": "Part",
+                      "guid": "1318224",
+                      "children": [
+                        {
+                          "name": "SurfaceGui",
+                          "className": "SurfaceGui",
+                          "guid": "1318460",
+                          "children": [
+                            {
+                              "name": "TextLabel",
+                              "className": "TextLabel",
+                              "guid": "1318479",
+                              "children": [
+                                {
+                                  "name": "UIStroke",
+                                  "className": "UIStroke",
+                                  "guid": "1318498"
+                                }
+                              ]
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "name": "Part",
+                      "className": "Part",
+                      "guid": "1318225"
+                    },
+                    {
+                      "name": "Part",
+                      "className": "Part",
+                      "guid": "1318226"
+                    },
+                    {
+                      "name": "Part",
+                      "className": "Part",
+                      "guid": "1318227"
+                    },
+                    {
+                      "name": "Part",
+                      "className": "Part",
+                      "guid": "1318228"
+                    },
+                    {
+                      "name": "Part",
+                      "className": "Part",
+                      "guid": "1318229"
+                    }
+                  ]
+                },
+                {
+                  "name": "Potions",
+                  "className": "Folder",
+                  "guid": "1318145",
+                  "children": [
+                    {
+                      "name": "BluePotion",
+                      "className": "Part",
+                      "guid": "1318233",
+                      "children": [
+                        {
+                          "name": "Decal",
+                          "className": "Decal",
+                          "guid": "1317934"
+                        }
+                      ]
+                    },
+                    {
+                      "name": "GreenPotion",
+                      "className": "Part",
+                      "guid": "1318232",
+                      "children": [
+                        {
+                          "name": "Decal",
+                          "className": "Decal",
+                          "guid": "1317933"
+                        }
+                      ]
+                    },
+                    {
+                      "name": "PurplePotion",
+                      "className": "Part",
+                      "guid": "1318230",
+                      "children": [
+                        {
+                          "name": "Decal",
+                          "className": "Decal",
+                          "guid": "1317931"
+                        }
+                      ]
+                    },
+                    {
+                      "name": "RedPotion",
+                      "className": "Part",
+                      "guid": "1318234",
+                      "children": [
+                        {
+                          "name": "Decal",
+                          "className": "Decal",
+                          "guid": "1317935"
+                        }
+                      ]
+                    },
+                    {
+                      "name": "YellowPotion",
+                      "className": "Part",
+                      "guid": "1318231",
+                      "children": [
+                        {
+                          "name": "Decal",
+                          "className": "Decal",
+                          "guid": "1317932"
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "name": "RNG",
+                  "className": "Folder",
+                  "guid": "1318151",
+                  "children": [
+                    {
+                      "name": "? Box",
+                      "className": "Part",
+                      "guid": "1318274",
+                      "children": [
+                        {
+                          "name": "Decal",
+                          "className": "Decal",
+                          "guid": "1317975"
+                        }
+                      ]
+                    },
+                    {
+                      "name": "Box",
+                      "className": "Part",
+                      "guid": "1318273",
+                      "children": [
+                        {
+                          "name": "Decal",
+                          "className": "Decal",
+                          "guid": "1317974"
+                        }
+                      ]
+                    },
+                    {
+                      "name": "Crate",
+                      "className": "Part",
+                      "guid": "1318271",
+                      "children": [
+                        {
+                          "name": "Decal",
+                          "className": "Decal",
+                          "guid": "1317972"
+                        }
+                      ]
+                    },
+                    {
+                      "name": "RNG",
+                      "className": "Part",
+                      "guid": "1318272",
+                      "children": [
+                        {
+                          "name": "Decal",
+                          "className": "Decal",
+                          "guid": "1317973"
+                        }
+                      ]
+                    },
+                    {
+                      "name": "Wheel",
+                      "className": "Part",
+                      "guid": "1318270",
+                      "children": [
+                        {
+                          "name": "Decal",
+                          "className": "Decal",
+                          "guid": "1317971"
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "name": "Stars",
+                  "className": "Folder",
+                  "guid": "1318155",
+                  "children": [
+                    {
+                      "name": "Star",
+                      "className": "Part",
+                      "guid": "1318319",
+                      "children": [
+                        {
+                          "name": "Decal",
+                          "className": "Decal",
+                          "guid": "1318020"
+                        }
+                      ]
+                    },
+                    {
+                      "name": "Star2",
+                      "className": "Part",
+                      "guid": "1318318",
+                      "children": [
+                        {
+                          "name": "Decal",
+                          "className": "Decal",
+                          "guid": "1318019"
+                        }
+                      ]
+                    },
+                    {
+                      "name": "Star3",
+                      "className": "Part",
+                      "guid": "1318316",
+                      "children": [
+                        {
+                          "name": "Decal",
+                          "className": "Decal",
+                          "guid": "1318017"
+                        }
+                      ]
+                    },
+                    {
+                      "name": "TripleStars",
+                      "className": "Part",
+                      "guid": "1318317",
+                      "children": [
+                        {
+                          "name": "Decal",
+                          "className": "Decal",
+                          "guid": "1318018"
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "name": "Stats",
+                  "className": "Folder",
+                  "guid": "1318150",
+                  "children": [
+                    {
+                      "name": "Eggs",
+                      "className": "Part",
+                      "guid": "1318266",
+                      "children": [
+                        {
+                          "name": "Decal",
+                          "className": "Decal",
+                          "guid": "1317967"
+                        }
+                      ]
+                    },
+                    {
+                      "name": "Energy",
+                      "className": "Part",
+                      "guid": "1318260",
+                      "children": [
+                        {
+                          "name": "Decal",
+                          "className": "Decal",
+                          "guid": "1317961"
+                        }
+                      ]
+                    },
+                    {
+                      "name": "Health",
+                      "className": "Part",
+                      "guid": "1318265",
+                      "children": [
+                        {
+                          "name": "Decal",
+                          "className": "Decal",
+                          "guid": "1317966"
+                        }
+                      ]
+                    },
+                    {
+                      "name": "Kills",
+                      "className": "Part",
+                      "guid": "1318261",
+                      "children": [
+                        {
+                          "name": "Decal",
+                          "className": "Decal",
+                          "guid": "1317962"
+                        }
+                      ]
+                    },
+                    {
+                      "name": "Playtime",
+                      "className": "Part",
+                      "guid": "1318262",
+                      "children": [
+                        {
+                          "name": "Decal",
+                          "className": "Decal",
+                          "guid": "1317963"
+                        }
+                      ]
+                    },
+                    {
+                      "name": "Power",
+                      "className": "Part",
+                      "guid": "1318268",
+                      "children": [
+                        {
+                          "name": "Decal",
+                          "className": "Decal",
+                          "guid": "1317969"
+                        }
+                      ]
+                    },
+                    {
+                      "name": "Power2",
+                      "className": "Part",
+                      "guid": "1318264",
+                      "children": [
+                        {
+                          "name": "Decal",
+                          "className": "Decal",
+                          "guid": "1317965"
+                        }
+                      ]
+                    },
+                    {
+                      "name": "Rocket",
+                      "className": "Part",
+                      "guid": "1318263",
+                      "children": [
+                        {
+                          "name": "Decal",
+                          "className": "Decal",
+                          "guid": "1317964"
+                        }
+                      ]
+                    },
+                    {
+                      "name": "Speed",
+                      "className": "Part",
+                      "guid": "1318267",
+                      "children": [
+                        {
+                          "name": "Decal",
+                          "className": "Decal",
+                          "guid": "1317968"
+                        }
+                      ]
+                    },
+                    {
+                      "name": "Strength",
+                      "className": "Part",
+                      "guid": "1318269",
+                      "children": [
+                        {
+                          "name": "Decal",
+                          "className": "Decal",
+                          "guid": "1317970"
+                        }
+                      ]
+                    },
+                    {
+                      "name": "Trophies/Wins",
+                      "className": "Part",
+                      "guid": "1318259",
+                      "children": [
+                        {
+                          "name": "Decal",
+                          "className": "Decal",
+                          "guid": "1317960"
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
         },
         {
           "name": "Vip",
